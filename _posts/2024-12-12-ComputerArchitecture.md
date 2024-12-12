@@ -3,8 +3,11 @@ title: コンピュアーキまとめ
 date: 2024-12-12 23:03:00 +/-0800
 categories: [Knowledge]
 tags: [japanese]     # TAG names should always be lowercase
+math: true
 ---
 # コンピュータアーキテクチャ
+
+ここで、教科書に暗記必要がある知識をまとめて書きました。
 
 ---
 
