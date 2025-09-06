@@ -1,0 +1,537 @@
+<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>コンピュアーキまとめ | Yankai Wang</title><link rel="icon" type="image/x-icon" href="/pixel_new.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":-1,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/night_sheryl_nome.png');
+ --light-background: url('/img/day_ranka_lee.png');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>コンピュアーキまとめ</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2025-01-26T14:44:13.000Z" id="date"> 2025-01-26</time></div></span><br><span>Last Update: <div class="control"><time datetime="2025-02-15T06:34:32.849Z" id="updated"> 2025-02-15</time></div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><p>ここで、教科書に暗記必要である知識をまとめて書きました。</p>
+<hr>
+<h2 id="データの流れと制御の流れ"><a href="#データの流れと制御の流れ" class="headerlink" title="データの流れと制御の流れ"></a>2. データの流れと制御の流れ</h2>
+<h3 id="第2章まとめ"><a href="#第2章まとめ" class="headerlink" title="第2章まとめ"></a>第2章まとめ</h3>
+<ol type="1">
+<li><p><strong>主記憶装置</strong>:
+アドレスによって命令の読書きを行う大容量のメモリである。</p></li>
+<li><p><strong>ROM</strong>:
+読み出し専用メモリで、マスクROM、ヒューズROMとEPROMに分類される。
+フラッシュメモリはEPROMの一種である。</p></li>
+<li><p><strong>RAM</strong>:
+読み書きのできるメモリである。低速大容量のDRAMと高速小容量のSRAMがある。</p></li>
+<li><p><strong>命令</strong>:
+コンピュータを制御する源となるもので、2進数のデータとして表現され、命令メモリに格納されている。</p></li>
+<li><p><strong>命令の種類</strong>:
+算術論理演算命令、メモリ操作命令、分岐命令に分類される。</p></li>
+<li><p><strong>命令実行サイクル</strong>:
+フェッチ、デコード、実行、結果の格納の四つの動作から成る。</p></li>
+<li><p><strong>シーケンサ</strong>:
+シーケンサは、命令アドレスの生成回路である。
+次の命令アドレスを決める機構で、プログラムカウンタと付加回路から成る。</p></li>
+</ol>
+<h3 id="命令実行サイクルのサンプル"><a href="#命令実行サイクルのサンプル" class="headerlink" title="命令実行サイクルのサンプル"></a>命令実行サイクルのサンプル</h3>
+<p>以下は算術論理演算命令の実行サイクルである。</p>
+<ol type="1">
+<li><p><strong>命令フェッチ</strong>: 命令メモリから図2.7 (a)
+の形式の命令を読み込む。</p></li>
+<li><p><strong>命令デコード</strong>:
+命令デコードでALUの制御信号を生成する。同時に、レジスタファイルからALUへの入力となる二つのレジスタの値を読み出す。
+レジスタアドレスは、命令の2番目と3番目のフィールドに格納されている。</p></li>
+<li><p><strong>演算実行</strong>: ALUがデコーダで指定された演算 (<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.505ex" role="img" focusable="false" viewBox="0 -583 778 665"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container></span>)
+を実行する。結果の選択信号をALUからの出力を選択するようにセットする。</p></li>
+<li><p><strong>結果の格納</strong>:
+レジスタファイルに実行結果が格納される。結果が入るレジスタアドレスは、命令の4番目のフィールドに格納されている。</p></li>
+</ol>
+<hr>
+<h2 id="命令セットアーキテクチャ"><a href="#命令セットアーキテクチャ" class="headerlink" title="命令セットアーキテクチャ"></a>3. 命令セットアーキテクチャ</h2>
+<h3 id="第3章まとめ"><a href="#第3章まとめ" class="headerlink" title="第3章まとめ"></a>第3章まとめ</h3>
+<ol type="1">
+<li><p><strong>命令セット</strong>:
+コンピュータのすべての命令の集まりである。</p></li>
+<li><p><strong>命令の表現形式</strong>:
+命令の2進数表現の形式、フィールドで区切られる。
+R形、I形、A形に分類される。</p></li>
+<li><p><strong>アセンブリ言語</strong>:
+機械語を記号で置き換える言語である。</p></li>
+<li><p><strong>算術論理演算命令</strong>:
+四則演算やシフトなど。レジスタとレジスタまたはレジスタと即値の間で演算がなされ、結果はレジスタに格納される。</p></li>
+<li><p><strong>データ移動命令</strong>:
+レジスタとメモリの間のデータのコピーを行う。
+レジスタ間のデータ移動、<strong>メモリとレジスタの間のデータ移動</strong>、メモリと入出力機器の間のデータ移動の3種類に大別される。</p></li>
+<li><p><strong>分岐命令</strong>:
+制御の流れを変更する命令。無条件分岐命令と条件分岐命令に分類される。</p></li>
+<li><p><strong>アドレッシング</strong>: アドレッシング (addressing)
+とは、データや命令の居場所を特定することである。
+メモリアドレスの生成方式。即値アドレッシング、ベース相対アドレッシング、レジスタアドレッシング、PC相対アドレッシングなどがある。</p></li>
+<li><p><strong>サブルーチン</strong>:
+部分プログラムを再利用可能な形にしたもので、PCを含むレジスタの待避が必要である。スタックを用いる。</p></li>
+</ol>
+<h3 id="無条件分岐命令違いのまとめ"><a href="#無条件分岐命令違いのまとめ" class="headerlink" title="無条件分岐命令違いのまとめ"></a>無条件分岐命令違いのまとめ</h3>
+<table>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr>
+<th>命令</th>
+<th>形式</th>
+<th>ターゲット指定方法</th>
+<th>特徴</th>
+<th>主な用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>j</td>
+<td>A</td>
+<td>直接指定 (絶対アドレス)</td>
+<td>単純な無条件分岐。サブルーチン呼び出しなし。</td>
+<td>任意のアドレスへのジャンプ</td>
+</tr>
+<tr>
+<td>jr</td>
+<td>R</td>
+<td><strong>レジスタに格納されたアドレス</strong></td>
+<td>レジスタに保存されたアドレスへのジャンプ。</td>
+<td><strong>サブルーチンからの復帰</strong></td>
+</tr>
+<tr>
+<td>jal</td>
+<td>A</td>
+<td>直接指定 (絶対アドレス)</td>
+<td>サブルーチン呼び出し。戻りアドレスを<code>r31</code>に保存。</td>
+<td><strong>サブルーチンの呼び出し</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="パイプライン処理"><a href="#パイプライン処理" class="headerlink" title="パイプライン処理"></a>4. パイプライン処理</h2>
+<h3 id="第4章まとめ"><a href="#第4章まとめ" class="headerlink" title="第4章まとめ"></a>第4章まとめ</h3>
+<ol type="1">
+<li><p><strong>パイプライン</strong>:
+流れ作業によって処理効率を飛躍的に向上させる技術</p></li>
+<li><p><strong>処理時間</strong>: 一つの (命令の)
+処理がはじまってから完了するまでの時間。 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="6.067ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 2681.4 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="4E" d="M633 637Q624 637 621 639T617 650Q617 670 630 683H641Q682 680 736 680Q836 680 845 683H853Q860 676 860 672Q858 647 848 637H832Q764 633 750 598Q746 590 673 300Q656 230 638 156T610 44L600 7Q598 0 576 0H559Q553 6 448 297L342 588Q341 588 279 336T216 81Q216 49 274 46Q293 46 295 40Q297 37 294 21Q293 19 292 16T291 11T290 7T289 4T287 2T284 1T280 1T275 0T263 0T229 1T167 2Q91 2 70 0H61Q54 7 54 11T57 27Q61 41 64 43T83 46Q146 50 164 84Q167 90 235 362L303 634Q300 635 253 637H220Q214 643 214 645T216 664Q220 677 226 683H314Q386 683 397 683T410 677Q412 675 501 428L591 179Q591 178 592 180T595 189T600 209T610 246T624 303T645 385Q698 595 698 606Q698 618 683 627T633 637Z"></path></g></g><g data-mml-node="mo" transform="translate(965.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1965.4,0)"><g data-mml-node="mi"><path data-c="54" d="M178 437Q173 442 171 446Q171 451 238 654Q243 670 250 677H681H762Q792 677 799 676T806 667Q806 661 788 553T768 444Q768 437 746 437Q727 437 723 445Q723 450 729 492T736 562Q736 589 728 602T693 624Q675 630 622 630H595Q575 630 571 629T564 623Q562 621 492 342T422 59Q422 48 502 46H542Q548 38 548 37T545 19Q541 6 535 0H517Q475 2 357 2Q315 2 279 2T223 2T198 1Q179 1 179 9Q179 14 182 24Q187 42 190 44Q194 46 206 46H232Q289 47 301 49T326 65L395 344Q465 619 465 626Q465 629 462 629Q456 631 411 631Q364 631 336 625T288 597T255 549T224 467Q215 442 210 437H178Z"></path></g></g></g></g></svg></mjx-container></span> (<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.681ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 743 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="4E" d="M633 637Q624 637 621 639T617 650Q617 670 630 683H641Q682 680 736 680Q836 680 845 683H853Q860 676 860 672Q858 647 848 637H832Q764 633 750 598Q746 590 673 300Q656 230 638 156T610 44L600 7Q598 0 576 0H559Q553 6 448 297L342 588Q341 588 279 336T216 81Q216 49 274 46Q293 46 295 40Q297 37 294 21Q293 19 292 16T291 11T290 7T289 4T287 2T284 1T280 1T275 0T263 0T229 1T167 2Q91 2 70 0H61Q54 7 54 11T57 27Q61 41 64 43T83 46Q146 50 164 84Q167 90 235 362L303 634Q300 635 253 637H220Q214 643 214 645T216 664Q220 677 226 683H314Q386 683 397 683T410 677Q412 675 501 428L591 179Q591 178 592 180T595 189T600 209T610 246T624 303T645 385Q698 595 698 606Q698 618 683 627T633 637Z"></path></g></g></g></g></svg></mjx-container></span>はパイプラインのステージ数、<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.62ex" height="1.532ex" role="img" focusable="false" viewBox="0 -677 716 677"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="54" d="M178 437Q173 442 171 446Q171 451 238 654Q243 670 250 677H681H762Q792 677 799 676T806 667Q806 661 788 553T768 444Q768 437 746 437Q727 437 723 445Q723 450 729 492T736 562Q736 589 728 602T693 624Q675 630 622 630H595Q575 630 571 629T564 623Q562 621 492 342T422 59Q422 48 502 46H542Q548 38 548 37T545 19Q541 6 535 0H517Q475 2 357 2Q315 2 279 2T223 2T198 1Q179 1 179 9Q179 14 182 24Q187 42 190 44Q194 46 206 46H232Q289 47 301 49T326 65L395 344Q465 619 465 626Q465 629 462 629Q456 631 411 631Q364 631 336 625T288 597T255 549T224 467Q215 442 210 437H178Z"></path></g></g></g></g></svg></mjx-container></span>は1ステージの処理時間)</p></li>
+<li><p><strong>スループット</strong>: 単位時間に終了する処理量 (命令数)
+。通常は<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.781ex;" xmlns="http://www.w3.org/2000/svg" width="2.122ex" height="2.737ex" role="img" focusable="false" viewBox="0 -864.9 937.8 1209.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mn" transform="translate(292.1,394) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mi" transform="translate(220,-345) scale(0.707)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><rect width="697.8" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></span>である。</p></li>
+<li><p><strong>基本命令パイプライン</strong>: 命令フェッチ(<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.477ex" height="1.538ex" role="img" focusable="false" viewBox="0 -680 653 680"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="46" d="M128 619Q121 626 117 628T101 631T58 634H25V680H582V676Q584 670 596 560T610 444V440H570V444Q563 493 561 501Q555 538 543 563T516 601T477 622T431 631T374 633H334H286Q252 633 244 631T233 621Q232 619 232 490V363H284Q287 363 303 363T327 364T349 367T372 373T389 385Q407 403 410 459V480H450V200H410V221Q407 276 389 296Q381 303 371 307T348 313T327 316T303 317T284 317H232V189L233 61Q240 54 245 52T270 48T333 46H360V0H348Q324 3 182 3Q51 3 36 0H25V46H58Q100 47 109 49T128 61V619Z"></path></g></g></g></g></svg></mjx-container></span>)、命令デコード(<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.729ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 764 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="44" d="M130 622Q123 629 119 631T103 634T60 637H27V683H228Q399 682 419 682T461 676Q504 667 546 641T626 573T685 470T708 336Q708 210 634 116T442 3Q429 1 228 0H27V46H60Q102 47 111 49T130 61V622ZM593 338Q593 439 571 501T493 602Q439 637 355 637H322H294Q238 637 234 628Q231 624 231 344Q231 62 232 59Q233 49 248 48T339 46H350Q456 46 515 95Q561 133 577 191T593 338Z"></path></g></g></g></g></svg></mjx-container></span>)、演算実行(<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.541ex" height="1.538ex" role="img" focusable="false" viewBox="0 -680 681 680"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="45" d="M128 619Q121 626 117 628T101 631T58 634H25V680H597V676Q599 670 611 560T625 444V440H585V444Q584 447 582 465Q578 500 570 526T553 571T528 601T498 619T457 629T411 633T353 634Q266 634 251 633T233 622Q233 622 233 621Q232 619 232 497V376H286Q359 378 377 385Q413 401 416 469Q416 471 416 473V493H456V213H416V233Q415 268 408 288T383 317T349 328T297 330Q290 330 286 330H232V196V114Q232 57 237 52Q243 47 289 47H340H391Q428 47 452 50T505 62T552 92T584 146Q594 172 599 200T607 247T612 270V273H652V270Q651 267 632 137T610 3V0H25V46H58Q100 47 109 49T128 61V619Z"></path></g></g></g></g></svg></mjx-container></span>)、結果の格納(<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.326ex" height="1.595ex" role="img" focusable="false" viewBox="0 -683 1028 705"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="57" d="M792 683Q810 680 914 680Q991 680 1003 683H1009V637H996Q931 633 915 598Q912 591 863 438T766 135T716 -17Q711 -22 694 -22Q676 -22 673 -15Q671 -13 593 231L514 477L435 234Q416 174 391 92T358 -6T341 -22H331Q314 -21 310 -15Q309 -14 208 302T104 622Q98 632 87 633Q73 637 35 637H18V683H27Q69 681 154 681Q164 681 181 681T216 681T249 682T276 683H287H298V637H285Q213 637 213 620Q213 616 289 381L364 144L427 339Q490 535 492 546Q487 560 482 578T475 602T468 618T461 628T449 633T433 636T408 637H380V683H388Q397 680 508 680Q629 680 650 683H660V637H647Q576 637 576 619L727 146Q869 580 869 600Q869 605 863 612T839 627T794 637H783V683H792Z"></path></g></g></g></g></svg></mjx-container></span>)からなるコンピュータのパイプライン</p></li>
+<li><p><strong>パイプライン阻害要因</strong>:
+最も時間のかかるステージ、パイプラインレジスタなどによる遅延、ハザード</p></li>
+<li><p><strong>ハザード</strong>:
+パイプライン動作ができなくなる状態。構造ハザード、データハザード、制御ハザードに分類される。</p></li>
+<li><p><strong>構造ハザード</strong>:
+コンピュータの内部構成に原因をもつハザード</p></li>
+<li><p><strong>データハザード</strong>:
+命令間のデータ依存関係に基づくハザード</p></li>
+<li><p><strong>制御ハザード</strong>: 分岐命令によるハザード</p></li>
+<li><p><strong>フォワーディング</strong>:
+前の命令の実行結果を直接Eステージに送ることでデータハザードを解消する手法</p></li>
+<li><p><strong>制御ハザードの緩和法</strong>:
+命令アドレスの早期生成、遅延分岐、分岐予測、命令スケジューリング</p></li>
+<li><p><strong>分岐予測</strong>:
+分岐の有無を予測し、成功すれば続行、失敗すればパイプラインをフラッシュする。
+2ビット予測器、2レベル適応形予測器など</p></li>
+</ol>
+<hr>
+<h2 id="キャッシュと仮想記憶"><a href="#キャッシュと仮想記憶" class="headerlink" title="キャッシュと仮想記憶"></a>5. キャッシュと仮想記憶</h2>
+<h3 id="第5章まとめ"><a href="#第5章まとめ" class="headerlink" title="第5章まとめ"></a>第5章まとめ</h3>
+<ol type="1">
+<li><p><strong>記憶階層</strong>:
+<strong>高速小容量</strong>のメモリと<strong>低速大容量</strong>のメモリを組み合わせて、見かけ上高速大容量のメモリを実現する技術</p></li>
+<li><p><strong>記憶階層の根拠</strong>:
+メモリ参照の傾向は、<strong>時間的局所性</strong>と<strong>空間的局所性</strong>がある。
+これを利用して、よく使うデータを上位階層のメモリに入れることで、効率的なメモリシステムが作られる。</p></li>
+<li><p><strong>透明性</strong>:
+機械語プログラムの変更なく効率や安全性を高めるという性質。キャッシュや仮想記憶は透明性を持つ。</p></li>
+<li><p><strong>キャッシュ</strong>:
+主記憶とCPUの間にある高速小容量一時メモリ。<strong>キャッシュライン</strong>と呼ばれる単位で、主記憶との間でデータが交換される。</p></li>
+<li><p><strong>ライトスルーとライトバック</strong>:
+ライトスルー方式では、ストアのたびに主記憶の書込みが行われる。
+ライトバック方式では、キャッシュラインの追出しが起こるときに主記憶の書込みが行われる。</p></li>
+<li><p><strong>キャッシュの三の形</strong>:
+ダイレクトマップ形、セットアソシアティブ形、フルアソシアティブ形。後にいくほど連想度が高く、ハードウェアが複雑になる。</p></li>
+<li><p><strong>キャッシュミス</strong>:
+<strong>初期参照ミス</strong>、<strong>競合性ミス</strong>、<strong>容量性ミス</strong>の3種類
+(三の<strong>C</strong>) がある。</p></li>
+<li><p><strong>仮想記憶</strong>:
+主記憶よりも大きなメモリ空間を実現し、複数のプログラムが一つの物理記憶を安全に分かちあって使うための技術</p></li>
+<li><p><strong>ページ</strong>:
+仮想記憶で、主記憶と二次記憶の間でデータをやりとりする単位。ふつう数キロバイト</p></li>
+<li><p><strong>ページテーブル</strong>:
+仮想アドレスから物理アドレスを導くためのテーブル。
+主記憶に置かれる。ユーザプログラムが更新することはできない。</p></li>
+<li><p><strong>ページフォールト</strong>:
+ページが主記憶に入っていないときに起こる例外。主記憶の領域を確保し、二次記憶からページを読み込むための対処が必要となる。</p></li>
+<li><p><strong>TLB</strong>:
+ページテーブルのキャッシュ。メモリアクセスの高速化のために用いられる。</p></li>
+<li><p><strong>仮想記憶とキャッシュ</strong>:
+直列形物理アドレスキャッシュ、並列形物理アドレスキャッシュ、仮想アドレスキャッシュなどの実現方式がある。</p></li>
+</ol>
+<h3 id="局所性"><a href="#局所性" class="headerlink" title="局所性"></a>局所性</h3>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr>
+<th>名前</th>
+<th>性質</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>空間的局所性</td>
+<td>あるメモリ語が参照されたときに、その語の近くの語が引き続き参照される性質</td>
+</tr>
+<tr>
+<td>時間的局所性</td>
+<td>あるメモリ語が参照されたとき、その語が時間をおかずに再び参照される性質</td>
+</tr>
+</tbody>
+</table>
+<h3 id="キャッシュミス"><a href="#キャッシュミス" class="headerlink" title="キャッシュミス"></a>キャッシュミス</h3>
+<table>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr>
+<th>名前</th>
+<th>英語</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>初期参照ミス</td>
+<td>compulsory miss, cold start miss</td>
+<td>キャッシュラインを最初にアクセスすることで起こるミス</td>
+</tr>
+<tr>
+<td>競合性ミス</td>
+<td>conflict miss, collision miss</td>
+<td>同じインデックスをもつ異なるキャッシュラインにアクセスすることで起こるミス</td>
+</tr>
+<tr>
+<td>容量性ミス</td>
+<td>capacity miss</td>
+<td>キャッシュしたいライン数がキャッシュ容量を上回ることで起こるミス</td>
+</tr>
+</tbody>
+</table>
+<p>ちなみに、競合性ミスはフルアソシアティブ型キャッシュではおこらない。</p>
+<h3 id="ページフォールトによる中断"><a href="#ページフォールトによる中断" class="headerlink" title="ページフォールトによる中断"></a>ページフォールトによる中断</h3>
+<ol type="1">
+<li>CPUの処理を一時中断する</li>
+<li>テーブルのエントリに入っている二次記憶上のアドレスから主記憶の空いている場所にページをコピーし、ページテーブルのエントリに物理ページアドレスを書き込み、有効ビットを1にする</li>
+<li>もし主記憶に空いた場所がなければ、どれか一つのページを二次記憶上に追い出し、空いた場所に必要とされるページを読み込むことになる</li>
+</ol>
+<h3 id="tlbの動作"><a href="#tlbの動作" class="headerlink" title="tlbの動作"></a>TLBの動作</h3>
+<ol type="1">
+<li>メモリアクセスが起こると、仮想ページアドレスをタグとして、TLBが参照される。</li>
+<li>TLBがヒットすると、該当する物理ページアドレスが取り出され、ページ内オフセットと合わせて物理アドレスが作られる。</li>
+<li>TLBがミスすると、5.3.2項で述べたやり方で、ページテーブルが参照され、TLBが空いているエントリに、現在参照している仮想ページアドレスに対応する物理ページアドレスが入れられる。
+TLBが空いていない場合は、LRUなどのやりかたでエントリが一つ空けられる。</li>
+</ol>
+<hr>
+<h2 id="命令レベル並列処理とアウトオブオーダ処理">6.
+命令レベル並列処理とアウトオブオーダ処理</h2>
+<h3 id="第6章まとめ"><a href="#第6章まとめ" class="headerlink" title="第6章まとめ"></a>第6章まとめ</h3>
+<ol type="1">
+<li><p><strong>並列処理</strong>:
+性能向上の手段。さまざまなレベルがある。</p></li>
+<li><p><strong>命令レベル並列処理</strong>:
+プロセッサの演算器を複数設けて命令を同時実行させる並列処理方式。</p></li>
+<li><p><strong>VLIW</strong>:
+1命令の中に複数の演算を入れたアーキテクチャ。コンパイラが並列実行できる命令を決める。</p></li>
+<li><p><strong>スーパスカラ</strong>:
+逐次実行の機械語プログラムから並列性を動的に抽出し、並列実行するアーキテクチャ。</p></li>
+<li><p><strong>静的最適化</strong>:
+機械語プログラムが効率よく実行できるように、コンパイラなどが事前にあらかじめコードを調整しておく。</p></li>
+<li><p><strong>ループアンローリング</strong>:
+小さなループを何個かまとめて一つのループとすることで、分岐命令によるハザードをなくす手法。</p></li>
+<li><p><strong>ソフトウェアパイプライニング</strong>:
+ループ間にまたがる命令を移動し、依存関係のある命令どうしの距離を離すことで、ハザードを起こりにくくし、並列度をあげる手法。</p></li>
+<li><p><strong>アウトオブオーダ処理</strong>:
+命令を動的に入れ替えて実行効率をあげる動的方式。
+ユーザに命令実行の順番を入れ替えるアウトオブオーダ実行と、実行結果をメモリに格納する順番を変えるアウトオブオーダ完了がある。</p></li>
+<li><p><strong>データ依存</strong>:
+フロー依存、逆依存、出力依存の3種類がある。</p></li>
+<li><p><strong>フロー依存</strong>:
+命令Aで書き込んだ値を後続の命令Bで読み出すことで起こる依存関係。RAWハザードの原因となる。</p></li>
+<li><p><strong>逆依存</strong>: 命令Aで読み出したレジスタ (メモリ語)
+に後続の命令Bが書き込みを行うことで起こる依存関係。WARハザードの原因となる。</p></li>
+<li><p><strong>出力依存</strong>: 命令Aで書き込んだレジスタ (メモリ語)
+に後続の命令Bが再度書き込みを行うことで起こる依存関係。WAWハザードの原因となる。</p></li>
+<li><p><strong>命令キュー</strong>: アウトオブオーダ処理のための機構。
+デコード後の複数の命令を格納し、実行可能な命令を取り出す機構が入っている。</p></li>
+<li><p><strong>リザベーションステーション</strong>:
+機能ユニットごとに分散配置された命令キュー。</p></li>
+<li><p><strong>レジスタリネーミング</strong>:
+レジスタ番号の置き換えによって、逆依存、出力依存をなくし、並列性を向上させる手法。</p></li>
+<li><p><strong>マッピングテーブル</strong>:
+レジスタリネーミングを実現する機構の一つ。命令における論理レジスタアドレスを物理レジスタアドレスに変換する。</p></li>
+<li><p><strong>リオーダバッファ</strong>:
+連想機構をもつメモリによってレジスタリネーミングを実現する機構。</p></li>
+<li><p><strong>プロセッサの性能指標(例)</strong>:
+クロック当りの平均実行命令数 <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container></span>
+クロック周波数。</p></li>
+</ol>
+<h3 id="データ依存の分類"><a href="#データ依存の分類" class="headerlink" title="データ依存の分類"></a>データ依存の分類</h3>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr>
+<th>名前</th>
+<th>定義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>フロー依存</td>
+<td>命令Aで書き込んだ値を後続の命令Bで読み出すことで起こる <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.054ex;" xmlns="http://www.w3.org/2000/svg" width="6.818ex" height="1.674ex" role="img" focusable="false" viewBox="0 -716 3013.6 740"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z"></path></g></g><g data-mml-node="mo" transform="translate(1027.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2305.6,0)"><g data-mml-node="mi"><path data-c="42" d="M131 622Q124 629 120 631T104 634T61 637H28V683H229H267H346Q423 683 459 678T531 651Q574 627 599 590T624 512Q624 461 583 419T476 360L466 357Q539 348 595 302T651 187Q651 119 600 67T469 3Q456 1 242 0H28V46H61Q103 47 112 49T131 61V622ZM511 513Q511 560 485 594T416 636Q415 636 403 636T371 636T333 637Q266 637 251 636T232 628Q229 624 229 499V374H312L396 375L406 377Q410 378 417 380T442 393T474 417T499 456T511 513ZM537 188Q537 239 509 282T430 336L329 337H229V200V116Q229 57 234 52Q240 47 334 47H383Q425 47 443 53Q486 67 511 104T537 188Z"></path></g></g></g></g></svg></mjx-container></span>
+の依存関係。真の依存関係 (true dependence) ともいう。</td>
+</tr>
+<tr>
+<td>逆依存</td>
+<td>命令Aで読み出したレジスタ (メモリ語)
+に後続の命令Bが書き込みを行うことで起こる <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.054ex;" xmlns="http://www.w3.org/2000/svg" width="6.818ex" height="1.674ex" role="img" focusable="false" viewBox="0 -716 3013.6 740"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z"></path></g></g><g data-mml-node="mo" transform="translate(1027.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2305.6,0)"><g data-mml-node="mi"><path data-c="42" d="M131 622Q124 629 120 631T104 634T61 637H28V683H229H267H346Q423 683 459 678T531 651Q574 627 599 590T624 512Q624 461 583 419T476 360L466 357Q539 348 595 302T651 187Q651 119 600 67T469 3Q456 1 242 0H28V46H61Q103 47 112 49T131 61V622ZM511 513Q511 560 485 594T416 636Q415 636 403 636T371 636T333 637Q266 637 251 636T232 628Q229 624 229 499V374H312L396 375L406 377Q410 378 417 380T442 393T474 417T499 456T511 513ZM537 188Q537 239 509 282T430 336L329 337H229V200V116Q229 57 234 52Q240 47 334 47H383Q425 47 443 53Q486 67 511 104T537 188Z"></path></g></g></g></g></svg></mjx-container></span>
+の依存関係。</td>
+</tr>
+<tr>
+<td>出力依存</td>
+<td>命令Aで書き込んだレジスタ (メモリ語)
+に後続の命令Bが再度書き込みを行うことで起こる <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.054ex;" xmlns="http://www.w3.org/2000/svg" width="6.818ex" height="1.674ex" role="img" focusable="false" viewBox="0 -716 3013.6 740"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z"></path></g></g><g data-mml-node="mo" transform="translate(1027.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2305.6,0)"><g data-mml-node="mi"><path data-c="42" d="M131 622Q124 629 120 631T104 634T61 637H28V683H229H267H346Q423 683 459 678T531 651Q574 627 599 590T624 512Q624 461 583 419T476 360L466 357Q539 348 595 302T651 187Q651 119 600 67T469 3Q456 1 242 0H28V46H61Q103 47 112 49T131 61V622ZM511 513Q511 560 485 594T416 636Q415 636 403 636T371 636T333 637Q266 637 251 636T232 628Q229 624 229 499V374H312L396 375L406 377Q410 378 417 380T442 393T474 417T499 456T511 513ZM537 188Q537 239 509 282T430 336L329 337H229V200V116Q229 57 234 52Q240 47 334 47H383Q425 47 443 53Q486 67 511 104T537 188Z"></path></g></g></g></g></svg></mjx-container></span>
+の依存関係。</td>
+</tr>
+</tbody>
+</table>
+<p>逆依存と出力依存は、主にレジスタ数の不足からくる依存である。</p>
+<h4 id="種類の依存例"><a href="#種類の依存例" class="headerlink" title="種類の依存例"></a>3種類の依存(例)</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs asm">mul r1, r2, r3<br>add r4, r1, r5<br>add r5, r6, r7<br>add r4, r8, r9<br>add r10, r4, r11<br>add r12, r10, r13<br></code></pre></td></tr></table></figure>
+<p>フロー依存: <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.298ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3667.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(278,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mo" transform="translate(778,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g><g data-mml-node="mo" transform="translate(1333.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(2889.6,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(3389.6,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g></g></svg></mjx-container></span>
+(r1) 、<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.298ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3667.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(278,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(778,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g><g data-mml-node="mo" transform="translate(1333.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(2889.6,0)"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path></g><g data-mml-node="mo" transform="translate(3389.6,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g></g></svg></mjx-container></span> (r4)
+、<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.298ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3667.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(278,0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g><g data-mml-node="mo" transform="translate(778,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g><g data-mml-node="mo" transform="translate(1333.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(2889.6,0)"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path></g><g data-mml-node="mo" transform="translate(3389.6,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g></g></svg></mjx-container></span> (r4) 、<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.298ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3667.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(278,0)"><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path></g><g data-mml-node="mo" transform="translate(778,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g><g data-mml-node="mo" transform="translate(1333.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(2889.6,0)"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path></g><g data-mml-node="mo" transform="translate(3389.6,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g></g></svg></mjx-container></span> (r10)</p>
+<p>逆依存: <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.298ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3667.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(278,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(778,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g><g data-mml-node="mo" transform="translate(1333.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(2889.6,0)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></g><g data-mml-node="mo" transform="translate(3389.6,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g></g></svg></mjx-container></span>
+(r5)</p>
+<p>出力依存: <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.298ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3667.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(278,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(778,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g><g data-mml-node="mo" transform="translate(1333.8,0)"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g><g data-mml-node="mo" transform="translate(2611.6,0)"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="mn" transform="translate(2889.6,0)"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g><g data-mml-node="mo" transform="translate(3389.6,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g></g></svg></mjx-container></span>
+(r4)</p>
+<h3 id="データ依存とデータハザード"><a href="#データ依存とデータハザード" class="headerlink" title="データ依存とデータハザード"></a>データ依存とデータハザード</h3>
+<table>
+<thead>
+<tr>
+<th>データ依存</th>
+<th>データハザード</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>フロー依存</td>
+<td>RAW (read after write) ハザード</td>
+</tr>
+<tr>
+<td>逆依存</td>
+<td>WAR (write after read) ハザード</td>
+</tr>
+<tr>
+<td>出力依存</td>
+<td>WAW (write after write) ハザード</td>
+</tr>
+</tbody>
+</table>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2025/02/21/graphtheory1/">← Next グラフ理論(グラフ)</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2025/01/26/hello-world/">Hello World Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/pixel_new.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Yankai Wang</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/sakura0224"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:ykwang224@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/huan-ying-misaki"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%B5%81%E3%82%8C%E3%81%A8%E5%88%B6%E5%BE%A1%E3%81%AE%E6%B5%81%E3%82%8C"><span class="toc-number">1.</span> <span class="toc-text">2. データの流れと制御の流れ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0%E3%81%BE%E3%81%A8%E3%82%81"><span class="toc-number">1.1.</span> <span class="toc-text">第2章まとめ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%AE%9F%E8%A1%8C%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB%E3%81%AE%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB"><span class="toc-number">1.2.</span> <span class="toc-text">命令実行サイクルのサンプル</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3"><span class="toc-number">2.</span> <span class="toc-text">3. 命令セットアーキテクチャ</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0%E3%81%BE%E3%81%A8%E3%82%81"><span class="toc-number">2.1.</span> <span class="toc-text">第3章まとめ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%84%A1%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B2%90%E5%91%BD%E4%BB%A4%E9%81%95%E3%81%84%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81"><span class="toc-number">2.2.</span> <span class="toc-text">無条件分岐命令違いのまとめ</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%83%91%E3%82%A4%E3%83%97%E3%83%A9%E3%82%A4%E3%83%B3%E5%87%A6%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">4. パイプライン処理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0%E3%81%BE%E3%81%A8%E3%82%81"><span class="toc-number">3.1.</span> <span class="toc-text">第4章まとめ</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%81%A8%E4%BB%AE%E6%83%B3%E8%A8%98%E6%86%B6"><span class="toc-number">4.</span> <span class="toc-text">5. キャッシュと仮想記憶</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0%E3%81%BE%E3%81%A8%E3%82%81"><span class="toc-number">4.1.</span> <span class="toc-text">第5章まとめ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E6%89%80%E6%80%A7"><span class="toc-number">4.2.</span> <span class="toc-text">局所性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9F%E3%82%B9"><span class="toc-number">4.3.</span> <span class="toc-text">キャッシュミス</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%83%9A%E3%83%BC%E3%82%B8%E3%83%95%E3%82%A9%E3%83%BC%E3%83%AB%E3%83%88%E3%81%AB%E3%82%88%E3%82%8B%E4%B8%AD%E6%96%AD"><span class="toc-number">4.4.</span> <span class="toc-text">ページフォールトによる中断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tlb%E3%81%AE%E5%8B%95%E4%BD%9C"><span class="toc-number">4.5.</span> <span class="toc-text">TLBの動作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E3%83%AC%E3%83%99%E3%83%AB%E4%B8%A6%E5%88%97%E5%87%A6%E7%90%86%E3%81%A8%E3%82%A2%E3%82%A6%E3%83%88%E3%82%AA%E3%83%96%E3%82%AA%E3%83%BC%E3%83%80%E5%87%A6%E7%90%86"><span class="toc-number">5.</span> <span class="toc-text">6.
+命令レベル並列処理とアウトオブオーダ処理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC6%E7%AB%A0%E3%81%BE%E3%81%A8%E3%82%81"><span class="toc-number">5.1.</span> <span class="toc-text">第6章まとめ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%83%87%E3%83%BC%E3%82%BF%E4%BE%9D%E5%AD%98%E3%81%AE%E5%88%86%E9%A1%9E"><span class="toc-number">5.2.</span> <span class="toc-text">データ依存の分類</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A8%AE%E9%A1%9E%E3%81%AE%E4%BE%9D%E5%AD%98%E4%BE%8B"><span class="toc-number">5.2.1.</span> <span class="toc-text">3種類の依存(例)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%83%87%E3%83%BC%E3%82%BF%E4%BE%9D%E5%AD%98%E3%81%A8%E3%83%87%E3%83%BC%E3%82%BF%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%89"><span class="toc-number">5.3.</span> <span class="toc-text">データ依存とデータハザード</span></a></li></ol></li></ol></div></div><footer><nobr><span class="icp-title">CC BY-NC-SA 4.0</span><span class="icp-content">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh</span></nobr><br><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main></body></html>
