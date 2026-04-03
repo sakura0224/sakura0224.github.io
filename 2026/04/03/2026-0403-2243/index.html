@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Recreating Apple Music–Style Collapsing Navigation Titles in SwiftUI | Yankai Wang</title><link rel="icon" type="image/x-icon" href="/pixel.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.ttf");
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":-1,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@10.5.0/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/night_sheryl_nome.png');
+ --light-background: url('/img/day_ranka_lee.png');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@10.5.0/dist/mermaid.esm.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Recreating Apple Music–Style Collapsing Navigation Titles in SwiftUI</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-04-03T13:43:32.000Z" id="date"> 2026-04-03</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-04-03T14:26:06.342Z" id="updated"> 2026-04-03</time></div></span><br><span>Word Count: <div class="control">733</div></span><br><span>Read Time: <div class="control">4 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><p>In the iOS 26, some system apps like Apple Music introduced a subtle
+UI pattern: <strong>the navigation title and toolbar area disappear
+completely when scrolling.</strong></p>
+<p>This is different from the classic <strong>large-title collapse
+behavior</strong> that has existed since iOS 11.</p>
+<figure>
+<img src="/images/Picsew_20260403230045.PNG"
+alt="example in Apple Music" />
+<figcaption aria-hidden="true">example in Apple Music</figcaption>
+</figure>
+<p>Traditional behavior:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Large Title<br>   ↓ scroll<br>Small Navigation Title<br></code></pre></td></tr></table></figure>
+<p>New behavior seen in Apple Music:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Large Title<br>   ↓ scroll<br>(no title)<br></code></pre></td></tr></table></figure>
+<p>The entire header area visually disappears, leaving more room for
+content.</p>
+<p>Naturally, many developers started looking for a SwiftUI modifier
+that enables this behavior.</p>
+<p>At the moment, however, there is no public SwiftUI API that directly
+exposes this interaction.</p>
+<hr />
+<h2 id="how-apple-might-be-implementing-this">How Apple Might Be
+Implementing This</h2>
+<p>From observing system apps and experimenting with SwiftUI, the effect
+likely relies on a combination of:</p>
+<ul>
+<li>Custom top headers inserted via
+<code>safeAreaInset(edge: .top)</code></li>
+<li>Scroll detection using <code>ScrollGeometry</code></li>
+<li>Separate visibility logic for different toolbar elements</li>
+<li>Animated opacity / offset transitions</li>
+</ul>
+<p>SwiftUI already provides pieces that could support this
+architecture:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs swift">.onScrollGeometryChange(<span class="hljs-operator">...</span>)<br>.safeAreaInset(<span class="hljs-operator">...</span>)<br>.toolbar(<span class="hljs-operator">...</span>)<br></code></pre></td></tr></table></figure>
+<p>But these are <strong>low-level building</strong> blocks, not a
+dedicated modifier.</p>
+<p>For example, if you wanted to recreate the behavior in a robust way,
+you could do something like this.</p>
+<hr />
+<h2 id="a-proper-implementation-approach">A Proper Implementation
+Approach</h2>
+<p>The most flexible way is to track the scroll position and adjust the
+header visibility.</p>
+<p>A simplified version might look like this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">CollapsingHeaderView</span>: <span class="hljs-title class_ inherited__">View</span> &#123;<br><br>    <span class="hljs-meta">@State</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> headerHidden <span class="hljs-operator">=</span> <span class="hljs-literal">false</span><br><br>    <span class="hljs-keyword">var</span> body: <span class="hljs-keyword">some</span> <span class="hljs-type">View</span> &#123;<br>        <span class="hljs-type">ScrollView</span> &#123;<br>            <span class="hljs-type">VStack</span> &#123;<br>                <span class="hljs-type">ForEach</span>(<span class="hljs-number">0</span><span class="hljs-operator">..&lt;</span><span class="hljs-number">50</span>) &#123; i <span class="hljs-keyword">in</span><br>                    <span class="hljs-type">Text</span>(<span class="hljs-string">&quot;Row <span class="hljs-subst">\(i)</span>&quot;</span>)<br>                        .frame(maxWidth: .infinity)<br>                        .padding()<br>                &#125;<br>            &#125;<br>        &#125;<br>        .onScrollGeometryChange(for: <span class="hljs-type">CGFloat</span>.<span class="hljs-keyword">self</span>) &#123; geometry <span class="hljs-keyword">in</span><br>            geometry.contentOffset.y<br>        &#125; action: &#123; offset <span class="hljs-keyword">in</span><br>            headerHidden <span class="hljs-operator">=</span> offset <span class="hljs-operator">&gt;</span> <span class="hljs-number">40</span><br>        &#125;<br>        .safeAreaInset(edge: .top) &#123;<br>            header<br>                .opacity(headerHidden <span class="hljs-operator">?</span> <span class="hljs-number">0</span> : <span class="hljs-number">1</span>)<br>                .animation(.easeInOut, value: headerHidden)<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> header: <span class="hljs-keyword">some</span> <span class="hljs-type">View</span> &#123;<br>        <span class="hljs-type">HStack</span> &#123;<br>            <span class="hljs-type">Text</span>(<span class="hljs-string">&quot;Library&quot;</span>)<br>                .font(.largeTitle.bold())<br><br>            <span class="hljs-type">Spacer</span>()<br><br>            <span class="hljs-type">Image</span>(systemName: <span class="hljs-string">&quot;person.crop.circle&quot;</span>)<br>        &#125;<br>        .padding()<br>        .background(.ultraThinMaterial)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>This approach has a few advantages:</p>
+<ul>
+<li>Works with <code>ScrollView</code>, <code>List</code>, or
+<code>LazyVStack</code></li>
+<li>Allows fully custom header layouts</li>
+<li>Gives precise control over when the header hides</li>
+<li>Supports animations and complex transitions</li>
+</ul>
+<p>It also reflects how many developers believe Apple internally
+structures similar UI patterns.</p>
+<p>However, this approach comes with a downside: <strong>you now own the
+scroll logic.</strong></p>
+<p>That means managing:</p>
+<ul>
+<li>scroll thresholds</li>
+<li>scroll direction</li>
+<li>toolbar layout</li>
+<li>edge cases with refreshable</li>
+<li>nested navigation stacks</li>
+</ul>
+<p>For some apps this is perfectly fine, but it may feel heavy for
+simple layouts.</p>
+<hr />
+<h2 id="a-surprisingly-simple-trick"><a href="#a-surprisingly-simple-trick" class="headerlink" title="a-surprisingly-simple-trick"></a>A Surprisingly Simple Trick</h2>
+<p>While experimenting with SwiftUI navigation bars, I discovered a much
+simpler trick.</p>
+<p>If you add an empty principal toolbar title, the collapsed navigation
+title becomes invisible.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs swift">.toolbar &#123;<br>    <span class="hljs-type">ToolbarItem</span>(placement: .principal) &#123;<br>        <span class="hljs-type">Text</span>(<span class="hljs-string">&quot;&quot;</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Used together with a large navigation title:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs swift">.navigationTitle(<span class="hljs-string">&quot;Library&quot;</span>)<br>.navigationBarTitleDisplayMode(.large)<br></code></pre></td></tr></table></figure>
+<p>the visual behavior becomes:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Large Title<br>   ↓ scroll<br>(empty)<br></code></pre></td></tr></table></figure>
+<p>In other words, the collapsed title still exists — it just renders
+nothing.</p>
+<p>Example:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">NavigationStack</span> &#123;<br>    <span class="hljs-type">List</span>(items) &#123; item <span class="hljs-keyword">in</span><br>        <span class="hljs-type">Text</span>(item.title)<br>    &#125;<br>    .navigationTitle(<span class="hljs-string">&quot;Library&quot;</span>)<br>    .navigationBarTitleDisplayMode(.large)<br>    .toolbar &#123;<br>        <span class="hljs-type">ToolbarItem</span>(placement: .principal) &#123;<br>            <span class="hljs-type">Text</span>(<span class="hljs-string">&quot;&quot;</span>)<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>This produces a surprisingly convincing effect that resembles the
+Apple Music collapsing header.</p>
+<hr />
+<h2 id="why-this-works"><a href="#why-this-works" class="headerlink" title="why-this-works"></a>Why This Works</h2>
+<p>SwiftUI navigation bars internally transition between two states:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Large Navigation Title<br>        ↓<br>Compact Navigation Title<br></code></pre></td></tr></table></figure>
+<p>By replacing the compact title with an empty view, the collapsed
+state effectively becomes invisible.</p>
+<p>So instead of seeing:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Large Title<br>   ↓<br>Small Title<br></code></pre></td></tr></table></figure>
+<p>you get:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Large Title<br>   ↓<br>(blank space)<br></code></pre></td></tr></table></figure>
+<p>The navigation bar itself still exists, but visually it looks like
+the header disappeared.</p>
+<hr />
+<h2 id="limitations"><a href="#limitations" class="headerlink" title="limitations"></a>Limitations</h2>
+<p>This trick works because of how SwiftUI currently renders navigation
+titles, but it has a few caveats:</p>
+<ul>
+<li>The navigation bar is still present.</li>
+<li>Toolbar items may still occupy layout space.</li>
+<li>It relies on current SwiftUI behavior and could change in future
+versions.</li>
+</ul>
+<p>In other words, this is a visual shortcut, not a full
+reimplementation of the Apple Music UI.</p>
+<hr />
+<h2 id="will-apple-provide-an-official-api">Will Apple Provide an
+Official API?</h2>
+<p>Possibly.</p>
+<p>Apple often ships new UI patterns in system apps first and exposes
+them publicly later.</p>
+<p>Examples include:</p>
+<ul>
+<li><code>.searchable</code></li>
+<li>large navigation titles</li>
+<li>tab bar minimization behavior (as shown in Apple Music)</li>
+</ul>
+<p>So it would not be surprising if a future SwiftUI release introduced
+something like:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift">.navigationBarCollapseBehavior(.onScroll)<br></code></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift">.toolbarScrollVisibility(.hidden)<br></code></pre></td></tr></table></figure>
+<p>Until then, developers can either:</p>
+<ol type="1">
+<li>Implement a custom collapsing header with scroll detection</li>
+<li>Use the small toolbar trick above for a lightweight
+approximation</li>
+</ol>
+<p>Both approaches can achieve a very similar user experience.</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/01/15/use-docker-to-deploy-a-minecraft-server/">Use Docker to Deploy a Minecraft server Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" href="#toc-div" title="To Catalog">≡</a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/pixel.png" alt="Logo" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Yankai Wang</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/sakura0224"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:ykwang224@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/huan-ying-misaki"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#how-apple-might-be-implementing-this"><span class="toc-number">1.</span> <span class="toc-text">How Apple Might Be
+Implementing This</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a-proper-implementation-approach"><span class="toc-number">2.</span> <span class="toc-text">A Proper Implementation
+Approach</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a-surprisingly-simple-trick"><span class="toc-number">3.</span> <span class="toc-text">A Surprisingly Simple Trick</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#why-this-works"><span class="toc-number">4.</span> <span class="toc-text">Why This Works</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#limitations"><span class="toc-number">5.</span> <span class="toc-text">Limitations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#will-apple-provide-an-official-api"><span class="toc-number">6.</span> <span class="toc-text">Will Apple Provide an
+Official API?</span></a></li></ol></div></div><footer><nobr><span class="icp-title">CC BY-NC-SA 4.0</span><span class="icp-content">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh</span></nobr><br><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main></body></html>
