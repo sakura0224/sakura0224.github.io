@@ -79,7 +79,7 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
  const script = document.createElement('script');
  script.src = 'https://vercount.one/js';
  document.head.appendChild(script);
-});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Recreating Apple Music–Style Collapsing Navigation Titles in SwiftUI</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-04-03T13:43:32.000Z" id="date"> 2026-04-03</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-04-03T14:38:35.935Z" id="updated"> 2026-04-03</time></div></span><br><span>Word Count: <div class="control">734</div></span><br><span>Read Time: <div class="control">4 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><p>In the iOS 26, some system apps like Apple Music introduced a subtle
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Recreating Apple Music–Style Collapsing Navigation Titles in SwiftUI</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-04-03T13:43:32.000Z" id="date"> 2026-04-03</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-04-03T14:52:20.179Z" id="updated"> 2026-04-03</time></div></span><br><span>Word Count: <div class="control">734</div></span><br><span>Read Time: <div class="control">4 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><p>In the iOS 26, some system apps like Apple Music introduced a subtle
 UI pattern: <strong>the navigation title and toolbar area disappear
 completely when scrolling.</strong></p>
 <p>This is different from the classic <strong>large-title collapse
@@ -99,7 +99,6 @@ content.</p>
 that enables this behavior.</p>
 <p>At the moment, however, there is no public SwiftUI API that directly
 exposes this interaction.</p>
-<hr />
 <h2 id="how-apple-might-be-implementing-this">How Apple Might Be
 Implementing This</h2>
 <p>From observing system apps and experimenting with SwiftUI, the effect
@@ -118,7 +117,6 @@ architecture:</p>
 dedicated modifier.</p>
 <p>For example, if you wanted to recreate the behavior in a robust way,
 you could do something like this.</p>
-<hr />
 <h2 id="a-proper-implementation-approach">A Proper Implementation
 Approach</h2>
 <p>The most flexible way is to track the scroll position and adjust the
@@ -147,7 +145,6 @@ scroll logic.</strong></p>
 </ul>
 <p>For some apps this is perfectly fine, but it may feel heavy for
 simple layouts.</p>
-<hr />
 <h2 id="a-surprisingly-simple-trick"><a href="#a-surprisingly-simple-trick" class="headerlink" title="a-surprisingly-simple-trick"></a>A Surprisingly Simple Trick</h2>
 <p>While experimenting with SwiftUI navigation bars, I discovered a much
 simpler trick.</p>
@@ -164,7 +161,6 @@ nothing.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">NavigationStack</span> &#123;<br>    <span class="hljs-type">List</span>(items) &#123; item <span class="hljs-keyword">in</span><br>        <span class="hljs-type">Text</span>(item.title)<br>    &#125;<br>    .navigationTitle(<span class="hljs-string">&quot;Library&quot;</span>)<br>    .navigationBarTitleDisplayMode(.large)<br>    .toolbar &#123;<br>        <span class="hljs-type">ToolbarItem</span>(placement: .principal) &#123;<br>            <span class="hljs-type">Text</span>(<span class="hljs-string">&quot;&quot;</span>)<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>This produces a surprisingly convincing effect that resembles the
 Apple Music collapsing header.</p>
-<hr />
 <h2 id="why-this-works"><a href="#why-this-works" class="headerlink" title="why-this-works"></a>Why This Works</h2>
 <p>SwiftUI navigation bars internally transition between two states:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Large Navigation Title<br>        ↓<br>Compact Navigation Title<br></code></pre></td></tr></table></figure>
@@ -176,7 +172,6 @@ state effectively becomes invisible.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Large Title<br>   ↓<br>(blank space)<br></code></pre></td></tr></table></figure>
 <p>The navigation bar itself still exists, but visually it looks like
 the header disappeared.</p>
-<hr />
 <h2 id="limitations"><a href="#limitations" class="headerlink" title="limitations"></a>Limitations</h2>
 <p>This trick works because of how SwiftUI currently renders navigation
 titles, but it has a few caveats:</p>
@@ -188,7 +183,6 @@ versions.</li>
 </ul>
 <p>In other words, this is a visual shortcut, not a full
 reimplementation of the Apple Music UI.</p>
-<hr />
 <h2 id="will-apple-provide-an-official-api">Will Apple Provide an
 Official API?</h2>
 <p>Possibly.</p>
