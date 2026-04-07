@@ -414,7 +414,7 @@ aside footer {
 #total-tags,
 #total-categories,
 #total-view {
-  margin: 5px 5px 5px 10px;
+  margin: 5px;
 }
 #aside-block {
   flex-grow: 2;
@@ -504,14 +504,12 @@ aside footer {
     display: none;
   }
 }
-@media (min-width: 769px) {
-  #toc-div .active {
-    background-color: var(--theme-highlight);
-    color: var(--theme-text-hover);
-  }
-  #toc-div .active .toc-number {
-    display: none;
-  }
+#toc-div .active {
+  background-color: var(--theme-highlight);
+  color: var(--theme-text-hover);
+}
+#toc-div .active .toc-number {
+  display: none;
 }
 [theme-mode=dark] pre code.hljs {
   display: block;
@@ -850,7 +848,7 @@ h6 {
   --theme-tag-bg: #cecece;
   --theme-tag-count-bg: #bababa;
   --theme-tag-border: #cecece;
-  --theme-loadingbar: #fff;
+  --theme-loadingbar: #000;
   --theme-loadingbar-fail: #f00;
   --theme-hide: #fff;
 }
@@ -1039,17 +1037,15 @@ nav li {
   overflow: hidden;
   transition: transform ease-in-out 0.3s;
   box-shadow: 0 0 5px var(--theme-bg-hover), 0 0 5px var(--theme-bg-hover);
+  left: 0;
 }
 .navBtnIconBar:nth-child(1) {
-  left: 0;
   transform: translate(0, -350%);
 }
 .navBtnIconBar:nth-child(2) {
-  left: 0;
   transform: translate(0, -50%);
 }
 .navBtnIconBar:nth-child(3) {
-  right: 0;
   transform: translate(0, 250%);
 }
 .expanded .navBtnIconBar {
@@ -1163,6 +1159,25 @@ nav li {
     padding: 10px 0;
     position: static;
   }
+  #toc-div {
+    z-index: 65534;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 20vw;
+    transform: translateX(100vw);
+    background: var(--theme-bg-trans0);
+    transition: 0.6s;
+    height: 100vh;
+    width: 80vw;
+  }
+  #toc-div .toc {
+    margin-block: auto;
+  }
+  #toc-div.open {
+    transform: translateX(0);
+  }
   #paginator {
     margin: 20px 0 0 0;
   }
@@ -1196,12 +1211,6 @@ nav li {
   }
   #total-archives .total-title {
     display: inline-block;
-  }
-  #to-index {
-    bottom: 56px;
-  }
-  #to-top {
-    bottom: 16px;
   }
   #post-index {
     margin: 16px 10px 0 10px;
@@ -2733,14 +2742,20 @@ article .recent-excerpt p {
 .category-list {
   padding: 0;
 }
+.category-list-child {
+  list-style-type: unset;
+  padding-left: 15px;
+}
 .category-list-item {
   position: relative;
 }
+.category-list-item a:hover {
+  background-color: var(--theme-bg-soft-hover);
+}
 @media (min-width: 769px) {
-  .category-list-item:hover a {
+  .category-list-item:hover>a {
     color: var(--theme-highlight);
     border-left: var(--theme-highlight) solid 5px;
-    background-color: var(--theme-bg-soft-hover);
   }
   .category-list-item:hover span {
     color: var(--theme-text-light);
@@ -2842,6 +2857,7 @@ article .recent-excerpt p {
   bottom: 8px;
 }
 .bottom-btn a {
+  position: absolute;
   overflow: hidden;
   display: block;
   right: 0;
@@ -2854,6 +2870,15 @@ article .recent-excerpt p {
   font-weight: 900;
   padding: 0;
   user-select: none;
+}
+.bottom-btn a:nth-last-child(1) {
+  bottom: 0;
+}
+.bottom-btn a:nth-last-child(2) {
+  bottom: 40px;
+}
+.bottom-btn a:nth-last-child(3) {
+  bottom: 80px;
 }
 @media (min-width: 769px) {
   .bottom-btn a:hover {
@@ -2887,6 +2912,37 @@ article .recent-excerpt p {
   border-radius: 50%;
   background: linear-gradient(45deg, transparent 10px, var(--theme-bg-light) 12px, var(--theme-bg-light));
   transition: transform 0.3s, filter 0.3s;
+}
+.i-index .tocBtnIconBar {
+  background-color: var(--theme-text-light);
+  width: 25px;
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 0.1em;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: transform ease-in-out 0.3s;
+  left: 8px;
+}
+.i-index .tocBtnIconBar:nth-child(1) {
+  transform: translate(0, -250%);
+}
+.i-index .tocBtnIconBar:nth-child(2) {
+  transform: translate(0, -50%);
+}
+.i-index .tocBtnIconBar:nth-child(3) {
+  transform: translate(0, 150%);
+}
+.i-index.open .tocBtnIconBar:nth-child(1) {
+  transform: translate(0, -50%) rotate(45deg) scaleX(1.2);
+}
+.i-index.open .tocBtnIconBar:nth-child(2) {
+  transform: translate(0, -50%) translateX(-300%);
+}
+.i-index.open .tocBtnIconBar:nth-child(3) {
+  transform: translate(0, -50%) rotate(-45deg) scaleX(1.2);
 }
 .gutter pre {
   margin: 6px 0;
