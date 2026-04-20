@@ -6,7 +6,7 @@
 <meta property="og:description" content="Introduction I recently started building my personal website using Swift. Not JavaScript. Not Hugo. Not a typical static site generator. Instead, I chose a Swift-based SSG called Raptor. The idea was">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-04-20T17:00:18.000Z">
-<meta property="article:modified_time" content="2026-04-20T17:09:54.959Z">
+<meta property="article:modified_time" content="2026-04-20T18:27:32.641Z">
 <meta property="article:author" content="Yankai Wang">
 <meta property="article:tag" content="english">
 <meta property="article:tag" content="swiftui">
@@ -95,7 +95,7 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
  const script = document.createElement('script');
  script.src = 'https://vercount.one/js';
  document.head.appendChild(script);
-});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Building a Personal Website in Swift - I Thought It Was Easy… Until It Wasn’t</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-04-20T17:00:18.000Z" id="date"> 2026-04-21</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-04-20T17:09:54.959Z" id="updated"> 2026-04-21</time></div></span><br><span>Word Count: <div class="control">927</div></span><br><span>Read Time: <div class="control">5 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>Introduction</h2>
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Building a Personal Website in Swift - I Thought It Was Easy… Until It Wasn’t</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-04-20T17:00:18.000Z" id="date"> 2026-04-21</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-04-20T18:27:32.641Z" id="updated"> 2026-04-21</time></div></span><br><span>Word Count: <div class="control">1.1k</div></span><br><span>Read Time: <div class="control">6 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>Introduction</h2>
 <p>I recently started building my personal website using Swift.</p>
 <p><strong>Not JavaScript. Not Hugo. Not a typical static site
 generator.</strong></p>
@@ -176,12 +176,12 @@ Theme System</h2>
 <p>Even though it worked, the system started to feel… weird.</p>
 <p>Here’s why.</p>
 <ol type="1">
-<li><p>Two Competing Systems</p>
+<li><p><strong>Two Competing Systems</strong></p>
 <p>Now I had:</p>
 <p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs swift">.font(.title1)        <span class="hljs-comment">// built-in</span><br>.textRole(.postMeta)  <span class="hljs-comment">// custom</span><br></code></pre></td></tr></table></figure></p>
 <p>Two ways to describe text.</p>
 <p>That’s already a smell.</p></li>
-<li><p>Tag vs Style Confusion</p>
+<li><p><strong>Tag vs Style Confusion</strong></p>
 <p>In Raptor:</p>
 <p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift">.font(.title1)<br></code></pre></td></tr></table></figure></p>
 <p>does two things:</p>
@@ -195,7 +195,7 @@ Theme System</h2>
 <p>That made me realize:</p>
 <p>HTML tag and text style are actually two different things.</p>
 <p>But the framework treats them as one.</p></li>
-<li><p>It Started to Feel Like Writing HTML Anyway</p>
+<li><p><strong>It Started to Feel Like Writing HTML Anyway</strong></p>
 <p>At some point I found myself writing things like:</p>
 <p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs swift">.tag(.h1)<br>.textRole(.navLabel)<br></code></pre></td></tr></table></figure></p>
 <p>Which is basically:</p>
@@ -208,66 +208,93 @@ Theme System</h2>
 <p>Hugo, for example (written in Go), does not solve this problem at the
 framework level.</p>
 <p>It simply lets you write:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">&lt;class=&quot;post-meta&quot;&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post-meta&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <p>and handle everything in CSS.</p>
 <p>No type system. No abstraction. Just freedom.</p>
-<p>⸻</p>
 <h2 id="so-whats-the-real-problem"><a href="#so-whats-the-real-problem" class="headerlink" title="so-whats-the-real-problem"></a>So… What’s the Real Problem?</h2>
-<p>At this point, I realized something important.</p>
 <p>The problem is not “we need a unified role system”.</p>
 <p>The real problem is:</p>
-<p>Custom semantic styles don’t integrate well with the theme
-system.</p>
-<p>In other words:</p>
+<p><strong>I was trying to solve this in the wrong layer.</strong></p>
+<p>After digging deeper into Raptor’s design (and even its source code),
+I realized something important:</p>
 <ul>
-<li>Built-in roles are theme-aware</li>
-<li>Custom styles are not</li>
+<li>Theme is designed for <strong>global design tokens</strong>
+(typography, colors, spacing)</li>
+<li>But <strong>semantic styles are not meant to live in
+Theme</strong></li>
 </ul>
-<p>That’s the actual gap.</p>
-<p>⸻</p>
-<h2 id="a-better-direction"><a href="#a-better-direction" class="headerlink" title="a-better-direction"></a>A Better Direction</h2>
-<p>Instead of forcing everything into one unified model, a more natural
-direction might be:</p>
+<p>Instead, Raptor already provides a dedicated abstraction for
+this:</p>
+<blockquote>
+<p><strong>Style</strong></p>
+</blockquote>
+<p>And I had completely overlooked it.</p>
+<h2 id="the-actual-solution-that-i-missed">The Actual Solution (That I
+Missed)</h2>
+<p>It turns out Raptor already has the right abstraction for this
+problem.</p>
+<p>Not <code>textRole</code>.</p>
+<p>Not extending Theme.</p>
+<p>But this:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">PostMetaStyle</span>: <span class="hljs-title class_ inherited__">Style</span> &#123;<br>    <span class="hljs-keyword">func</span> <span class="hljs-title function_">style</span>(<span class="hljs-params">content</span>: <span class="hljs-type">Content</span>, <span class="hljs-params">environment</span>: <span class="hljs-type">EnvironmentConditions</span>) -&gt; <span class="hljs-type">Content</span> &#123;<br>        content<br>            .font(.caption)<br>            .foregroundStyle(.secondary)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>And then:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">Text</span>(<span class="hljs-string">&quot;April 20&quot;</span>)<br>    .style(<span class="hljs-type">PostMetaStyle</span>())<br></code></pre></td></tr></table></figure>
+<p>That’s it.</p>
+<p>This is effectively:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post-meta&quot;</span>&gt;</span>April 20<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>But expressed in a reusable, composable, and type-safe way.</p>
+<p>Even better, <code>Style</code> can access environment
+conditions:</p>
 <ul>
-<li>Keep built-in typography as-is</li>
-<li>Introduce first-class support for custom semantic text styles</li>
-<li>Make them integrate with:
-<ul>
-<li>theme configuration</li>
-<li>light/dark mode</li>
-<li>CSS generation</li>
-</ul></li>
+<li>light / dark mode</li>
+<li>active theme</li>
+<li>contrast settings</li>
+<li>layout conditions</li>
 </ul>
-<p>Something like:</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">Text</span>(<span class="hljs-string">&quot;April 20&quot;</span>).semantic(.postMeta)<br></code></pre></td></tr></table></figure>
-<p>Where <code>.semantic(...)</code> is:</p>
+<p>Which means you can write:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">PostMetaStyle</span>: <span class="hljs-title class_ inherited__">Style</span> &#123;<br>    <span class="hljs-keyword">func</span> <span class="hljs-title function_">style</span>(<span class="hljs-params">content</span>: <span class="hljs-type">Content</span>, <span class="hljs-params">environment</span>: <span class="hljs-type">EnvironmentConditions</span>) -&gt; <span class="hljs-type">Content</span> &#123;<br>        <span class="hljs-keyword">if</span> environment.colorScheme <span class="hljs-operator">==</span> .dark &#123;<br>            content.foregroundStyle(.gray)<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            content.foregroundStyle(.secondary)<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>So instead of:</p>
 <ul>
-<li>theme-aware</li>
-<li>reusable</li>
-<li>consistent</li>
+<li>trying to extend Theme</li>
+<li>or inventing a new role system</li>
 </ul>
-<p>Without trying to merge it with title1, body, etc.</p>
+<p>The intended model is:</p>
+<ul>
+<li><strong>Theme → defines global tokens</strong></li>
+<li><strong>Style → defines reusable semantic styles</strong></li>
+</ul>
+<p>In other words, Raptor already supports exactly what I wanted — just
+not in the place I was looking.</p>
 <h2 id="what-i-learned"><a href="#what-i-learned" class="headerlink" title="what-i-learned"></a>What I Learned</h2>
 <p>This little experiment taught me a few things:</p>
 <ol type="1">
-<li><p>“Elegant” abstractions can be misleading</p>
+<li><p><strong>“Elegant” abstractions can be misleading</strong></p>
 <p>A unified system looks great on paper, but may not fit the existing
 architecture.</p></li>
-<li><p>Not everything needs to be in the type system</p>
+<li><p><strong>Not everything needs to be in the type
+system</strong></p>
 <p>Traditional SSGs work fine by leaving some flexibility to CSS.</p>
 <p>Trying to encode everything in Swift may not always be worth
 it.</p></li>
-<li><p>The real challenge is integration</p>
+<li><p><strong>The real challenge is understanding the abstraction
+boundary</strong></p>
 <p>The key isn’t:</p>
 <p>“How do I define more roles?”</p>
 <p>But:</p>
-<p>“How do I make custom styles first-class citizens in the theme
-system?”</p></li>
+<p><strong>“Which layer should own semantic styles?”</strong></p>
+<p>In Raptor’s case, the answer is:</p>
+<ul>
+<li>Theme → tokens</li>
+<li>Style → semantics</li>
+</ul></li>
 </ol>
 <h2 id="closing-thoughts"><a href="#closing-thoughts" class="headerlink" title="closing-thoughts"></a>Closing Thoughts</h2>
 <p>I started this thinking:</p>
 <p>“I just need a way to define custom text styles.”</p>
 <p>And ended up questioning:</p>
+<p>The most surprising part?</p>
+<p>The framework already had the answer.</p>
+<p>I just didn’t understand it yet.</p>
 <ul>
 <li>how theme systems should be designed</li>
 <li>how much abstraction is too much</li>
@@ -278,4 +305,5 @@ system?”</p></li>
 lies.</p>
 <div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/04/03/apple-music-style-navigation-titles/">Recreating Apple Music–Style Collapsing Navigation Titles in SwiftUI Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/avatar.png" alt="Yankai Wang" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Yankai Wang</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/shiinayane"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:ykwang224@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/huan-ying-misaki"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what-is-raptor"><span class="toc-number">2.</span> <span class="toc-text">What is Raptor?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-problem-real-world-themes-are-messy"><span class="toc-number">3.</span> <span class="toc-text">The Problem: Real-World
 Themes Are Messy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#why-this-felt-hard-in-swift"><span class="toc-number">4.</span> <span class="toc-text">Why This Felt Hard in Swift</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#my-first-idea-extend-the-theme-system"><span class="toc-number">5.</span> <span class="toc-text">My First Idea: Extend the
-Theme System</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#it-worked-technically"><span class="toc-number">6.</span> <span class="toc-text">It Worked… Technically</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#something-felt-off"><span class="toc-number">7.</span> <span class="toc-text">Something Felt Off</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#looking-at-other-tools"><span class="toc-number">8.</span> <span class="toc-text">Looking at Other Tools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#so-whats-the-real-problem"><span class="toc-number">9.</span> <span class="toc-text">So… What’s the Real Problem?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a-better-direction"><span class="toc-number">10.</span> <span class="toc-text">A Better Direction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what-i-learned"><span class="toc-number">11.</span> <span class="toc-text">What I Learned</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#closing-thoughts"><span class="toc-number">12.</span> <span class="toc-text">Closing Thoughts</span></a></li></ol></div></div><footer><nobr><span class="icp-title">CC BY-NC-SA 4.0</span><span class="icp-content">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh</span></nobr><br><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main></body></html>
+Theme System</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#it-worked-technically"><span class="toc-number">6.</span> <span class="toc-text">It Worked… Technically</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#something-felt-off"><span class="toc-number">7.</span> <span class="toc-text">Something Felt Off</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#looking-at-other-tools"><span class="toc-number">8.</span> <span class="toc-text">Looking at Other Tools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#so-whats-the-real-problem"><span class="toc-number">9.</span> <span class="toc-text">So… What’s the Real Problem?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-actual-solution-that-i-missed"><span class="toc-number">10.</span> <span class="toc-text">The Actual Solution (That I
+Missed)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what-i-learned"><span class="toc-number">11.</span> <span class="toc-text">What I Learned</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#closing-thoughts"><span class="toc-number">12.</span> <span class="toc-text">Closing Thoughts</span></a></li></ol></div></div><footer><nobr><span class="icp-title">CC BY-NC-SA 4.0</span><span class="icp-content">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh</span></nobr><br><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main></body></html>
