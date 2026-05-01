@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Swift for Static Sites - SwiftUI Purism vs Web-Native Reality | Yankai Wang</title><meta name="keywords" content="english,swiftui,swift,ssg,html,css"><meta name="description" content="Recently I went through a number of static site generators in the Swift ecosystem — loopwerk&#x2F;Saga, toucansites&#x2F;toucan, JohnSundell&#x2F;Publish, twostraws&#x2F;Ignite, and raptor-build&#x2F;raptor — and compared the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift for Static Sites - SwiftUI Purism vs Web-Native Reality">
+<meta property="og:url" content="https://www.shiinayane.com/2026/05/01/swift-for-static-sites/index.html">
+<meta property="og:site_name" content="Yankai Wang">
+<meta property="og:description" content="Recently I went through a number of static site generators in the Swift ecosystem — loopwerk&#x2F;Saga, toucansites&#x2F;toucan, JohnSundell&#x2F;Publish, twostraws&#x2F;Ignite, and raptor-build&#x2F;raptor — and compared the">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-05-01T02:01:54.000Z">
+<meta property="article:modified_time" content="2026-05-01T02:33:52.644Z">
+<meta property="article:author" content="Yankai Wang">
+<meta property="article:tag" content="english">
+<meta property="article:tag" content="swiftui">
+<meta property="article:tag" content="swift">
+<meta property="article:tag" content="ssg">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary"><link rel="canonical" href="https://www.shiinayane.com/2026/05/01/swift-for-static-sites/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":-1,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@11.12.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/night_sheryl_nome.png');
+ --light-background: url('/img/day_ranka_lee.png');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Swift for Static Sites - SwiftUI Purism vs Web-Native Reality</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-05-01T02:01:54.000Z" id="date"> 2026-05-01</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-05-01T02:33:52.644Z" id="updated"> 2026-05-01</time></div></span><br><span>Word Count: <div class="control">1.1k</div></span><br><span>Read Time: <div class="control">7 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><p>Recently I went through a number of static site generators in the
+Swift ecosystem — <a
+target="_blank" rel="noopener" href="https://github.com/loopwerk/Saga"><i class="fa-brands fa-github"></i>loopwerk/Saga</a>,
+<a
+target="_blank" rel="noopener" href="https://github.com/toucansites/toucan"><i class="fa-brands fa-github"></i>toucansites/toucan</a>,
+<a
+target="_blank" rel="noopener" href="https://github.com/JohnSundell/Publish"><i class="fa-brands fa-github"></i>JohnSundell/Publish</a>,
+<a
+target="_blank" rel="noopener" href="https://github.com/twostraws/Ignite"><i class="fa-brands fa-github"></i>twostraws/Ignite</a>,
+and <a
+target="_blank" rel="noopener" href="https://github.com/raptor-build/raptor"><i class="fa-brands fa-github"></i>raptor-build/raptor</a>
+— and compared them with more mature Web-native tools like <a
+target="_blank" rel="noopener" href="https://github.com/withastro/astro"><i class="fa-brands fa-github"></i>withastro/astro</a>,
+<a
+target="_blank" rel="noopener" href="https://github.com/hexojs/hexo"><i class="fa-brands fa-github"></i>hexojs/hexo</a>,
+<a
+target="_blank" rel="noopener" href="https://github.com/gohugoio/hugo"><i class="fa-brands fa-github"></i>gohugoio/hugo</a>,
+and <a
+target="_blank" rel="noopener" href="https://github.com/jekyll/jekyll"><i class="fa-brands fa-github"></i>jekyll/jekyll</a>.</p>
+<p>At first, my question was simple:</p>
+<blockquote>
+<p>If I want to migrate a complex visual blog theme into a Swift SSG,
+which tool works best?</p>
+</blockquote>
+<p>But after reading source code, examples, and trying them in practice,
+the real question became:</p>
+<blockquote>
+<p><strong>Where should Swift actually live in the Web
+stack?</strong></p>
+</blockquote>
+<p>Should we try to express UI using Swift components (like SwiftUI), or
+should we accept that the Web is fundamentally HTML, CSS, and JavaScript
+— and let Swift focus on modeling and generation?</p>
+<p>This question turns out to be fundamental.</p>
+<h2 id="the-web-already-has-a-native-runtime">The Web Already Has a
+Native Runtime</h2>
+<p>SwiftUI works on iOS because it maps directly to a system UI
+runtime.</p>
+<p>You can think of it like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs plain">iOS:<br>System UI runtime<br>→ SwiftUI Button / VStack / NavigationStack<br>→ Your Swift code<br>Web:<br>Browser runtime (DOM + CSS + JS)<br>→ HTML &lt;button&gt; / &lt;div&gt; / &lt;article&gt;<br>→ CSS grid / flex / selectors<br>→ Your HTML/CSS/JS<br></code></pre></td></tr></table></figure>
+<p>A SwiftUI Button is not a simulation — it connects directly to
+platform behaviors: accessibility, focus, animation, input.</p>
+<p>But a Button in Raptor or Ignite ultimately becomes:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;...&quot;</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>plus CSS.</p>
+<p>The browser has no idea what a Swift Button is. It only understands
+HTML, CSS, and JS.</p>
+<p>So the issue is not whether declarative UI is good — React, Vue, and
+Astro are all declarative.</p>
+<p>The difference is what you are declaring.</p>
+<h2 id="what-are-you-actually-declaring">What Are You Actually
+Declaring?</h2>
+<p>Let’s compare:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 45%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th>Framework</th>
+<th>What you declare</th>
+<th>Distance from the platform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SwiftUI</td>
+<td>Native UI tree</td>
+<td>Very close</td>
+</tr>
+<tr>
+<td>React / Vue</td>
+<td>DOM / component tree</td>
+<td>Very close</td>
+</tr>
+<tr>
+<td>Astro</td>
+<td>HTML + islands</td>
+<td>Very close</td>
+</tr>
+<tr>
+<td>Saga / Publish</td>
+<td>HTML output tree</td>
+<td>Close</td>
+</tr>
+<tr>
+<td>Ignite</td>
+<td>Swift components (Bootstrap-like)</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Raptor</td>
+<td>SwiftUI-like UI + style system</td>
+<td>Farther</td>
+</tr>
+</tbody>
+</table>
+<p>This table doesn’t say which is better — it shows how closely your
+mental model matches what the browser actually runs.</p>
+<p>SwiftUI works because the abstraction matches the platform.</p>
+<p>React works because it still models the DOM.</p>
+<p>Astro works because it embraces HTML as a first-class citizen.</p>
+<p>Raptor and Ignite, however, try to move the abstraction upward — into
+a Swift component tree.</p>
+<p>That works beautifully for simple pages.</p>
+<p>But when the UI becomes complex, friction appears.</p>
+<h2 id="the-sweet-spot-and-the-cliff">The Sweet Spot — and the
+Cliff</h2>
+<p>Frameworks like Ignite shine when the UI is simple:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">Text</span>(<span class="hljs-string">&quot;Hello&quot;</span>)<br><span class="hljs-type">Button</span>(<span class="hljs-string">&quot;Read More&quot;</span>)<br><span class="hljs-type">Grid</span> &#123;<br>  <span class="hljs-type">Card</span> &#123; <span class="hljs-operator">...</span> &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Bootstrap gives you layout, spacing, responsiveness, and visual
+hierarchy for free.</p>
+<p>But real-world visual themes often require things like:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.card</span><span class="hljs-selector-pseudo">::before</span><br><span class="hljs-selector-class">.sidebar</span><span class="hljs-selector-pseudo">:has</span>(<span class="hljs-selector-class">.active</span>)<br><span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">minmax</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>fr) <span class="hljs-number">18rem</span><br>position: sticky<br>backdrop-filter<br>mask-image<br>container queries<br></code></pre></td></tr></table></figure>
+<p>Once you go beyond built-in components, you often fall back to:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">Tag</span>(<span class="hljs-string">&quot;aside&quot;</span>) &#123; <span class="hljs-operator">...</span> &#125;<br>.class(<span class="hljs-string">&quot;layout-shell__sidebar&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>and then write CSS anyway.</p>
+<p>At that point, the abstraction becomes fragmented:</p>
+<blockquote>
+<p>half SwiftUI-style, half HTML wrapper.</p>
+</blockquote>
+<p>The issue isn’t that Raptor or Ignite are flawed.</p>
+<p>It’s that their abstraction sweet spot is:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">Simple sites<br>Docs<br>Portfolios<br>Basic blogs<br>Bootstrap-like layouts<br></code></pre></td></tr></table></figure>
+<p>When your goal is a highly customized visual theme, especially one
+originally written in Astro or Hexo, the abstraction starts to
+break.</p>
+<h2 id="saga-swift-purism-not-swiftui-purism">Saga: Swift Purism, Not
+SwiftUI Purism</h2>
+<p>Saga takes a very different approach.</p>
+<p>Instead of trying to replace Web primitives, it divides
+responsibilities cleanly:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs plain">Swift:<br>Content model<br>Pipeline<br>Generation logic<br>Type safety<br><br>Web:<br>HTML structure<br>CSS styling<br>JavaScript behavior<br></code></pre></td></tr></table></figure>
+<p>A Saga template might look like:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs swift">article(class: <span class="hljs-string">&quot;mx-auto max-w-3xl px-6 py-12&quot;</span>) &#123;<br>  h1(class: <span class="hljs-string">&quot;text-4xl font-bold tracking-tight&quot;</span>) &#123;<br>    item.title<br>  &#125;<br>  div(class: <span class="hljs-string">&quot;prose prose-slate dark:prose-invert&quot;</span>) &#123;<br>    raw(item.body)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>This is not SwiftUI.</p>
+<p>It does not pretend to be.</p>
+<p>It is simply Swift generating HTML — with full respect for Web
+primitives.</p>
+<p>That’s why Saga feels more “native” in both worlds:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs plain">Swift-native:<br>Types, functions, composition<br><br>Web-native:<br>HTML, CSS, browser semantics<br></code></pre></td></tr></table></figure>
+<h2 id="tailwind-changes-the-experience">Tailwind Changes the
+Experience</h2>
+<p>Without Tailwind, Saga feels like classic HTML + CSS:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs swift">article(class: <span class="hljs-string">&quot;post-card&quot;</span>) &#123;<br>  h2(class: <span class="hljs-string">&quot;post-card__title&quot;</span>) &#123;<br>    item.title<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>With Tailwind:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs swift">article(class: <span class="hljs-string">&quot;group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg&quot;</span>) &#123;<br>  h2(class: <span class="hljs-string">&quot;text-2xl font-semibold tracking-tight&quot;</span>) &#123;<br>    a(href: post.url) &#123;<br>      post.title<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Now you’re controlling layout, spacing, and style directly at the
+HTML level.</p>
+<p>No translation needed.</p>
+<p>This avoids one of the biggest problems in SwiftUI-style DSLs:</p>
+<blockquote>
+<p>translating CSS concepts into Swift modifiers.</p>
+</blockquote>
+<p>Instead, Tailwind remains CSS — just expressed differently.</p>
+<h2 id="raptor-ambitious-but-friction-prone-for-complex-ui">Raptor:
+Ambitious, but Friction-Prone for Complex UI</h2>
+<p>Raptor aims higher than a typical SSG.</p>
+<p>It defines:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">Site<br>Page<br>PostPage<br>CategoryPage<br>Layout<br>Theme<br>Style<br>PostWidget<br></code></pre></td></tr></table></figure>
+<p>It even integrates with Vapor for server-side rendering.</p>
+<p>This is powerful — especially for:</p>
+<ul>
+<li>Swift-first content platforms</li>
+<li>Static + dynamic hybrid sites</li>
+<li>Backend integration</li>
+</ul>
+<p>But it doesn’t automatically solve front-end expression.</p>
+<p>In fact, once UI becomes complex, you often end up writing:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">Tag + Div + Class + CSS<br></code></pre></td></tr></table></figure>
+<p>again.</p>
+<p>Which raises a fundamental question:</p>
+<blockquote>
+<p>If complex UI still requires Web-native expression, what value does
+the abstraction add?</p>
+</blockquote>
+<h2 id="ignite-fast-but-opinionated"><a href="#ignite-fast-but-opinionated" class="headerlink" title="ignite-fast-but-opinionated"></a>Ignite: Fast, but Opinionated</h2>
+<p>Ignite is more pragmatic.</p>
+<p>It embraces:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">Swift API + Bootstrap<br></code></pre></td></tr></table></figure>
+<p>This makes it great for:</p>
+<ul>
+<li>quick sites</li>
+<li>portfolios</li>
+<li>documentation</li>
+</ul>
+<p>But Bootstrap becomes visible.</p>
+<p>If your goal is a highly customized visual identity, the built-in
+structure can become limiting.</p>
+<h2 id="astro-still-the-most-stable-choice">Astro: Still the Most Stable
+Choice</h2>
+<p>If we ignore Swift entirely and ask:</p>
+<blockquote>
+<p><em>What is the most stable tool for complex visual static
+sites?</em></p>
+</blockquote>
+<p>The answer is still Astro.</p>
+<p>Because:</p>
+<ul>
+<li>HTML/CSS/JS are first-class</li>
+<li>Components are native to the platform</li>
+<li>Tailwind integration is smooth</li>
+<li>Content Collections provide structure</li>
+<li>Ecosystem is mature</li>
+</ul>
+<p>Astro doesn’t fight the Web.</p>
+<p>It grows from it.</p>
+<h2 id="the-real-question"><a href="#the-real-question" class="headerlink" title="the-real-question"></a>The Real Question</h2>
+<p>This entire exploration leads to a clearer conclusion:</p>
+<blockquote>
+<p><strong>The real question is not “Can Swift build
+websites?”</strong></p>
+<p><strong>It is “Where should Swift be used?”</strong></p>
+</blockquote>
+<h2 id="final-perspective"><a href="#final-perspective" class="headerlink" title="final-perspective"></a>Final Perspective</h2>
+<p>There are two fundamentally different philosophies:</p>
+<h3 id="swiftui-style-web-dsl-raptor-ignite">SwiftUI-style Web DSL
+(Raptor / Ignite)</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">Swift expresses UI<br>→ translated into HTML/CSS<br></code></pre></td></tr></table></figure>
+<h3 id="swift-native-generation-web-native-ui-saga">Swift-native
+generation + Web-native UI (Saga)</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">Swift handles logic and structure<br>HTML/CSS/JS express the UI<br></code></pre></td></tr></table></figure>
+<p>For complex visual sites, the second model is more stable.</p>
+<p>Not because it is more powerful — but because it respects the
+platform.</p>
+<h2 id="final-takeaway"><a href="#final-takeaway" class="headerlink" title="final-takeaway"></a>Final Takeaway</h2>
+<blockquote>
+<p><strong>Swift should not compete with HTML/CSS/JS.</strong></p>
+<p><strong>It should complement them.</strong></p>
+</blockquote>
+<p>When Swift tries to replace the UI layer, abstraction costs rise
+quickly.</p>
+<p>When Swift focuses on modeling and generation, its strengths — type
+safety, composition, and tooling — shine.</p>
+<h2 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a>TL;DR</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">Not using Swift: Astro + Tailwind<br>Using Swift seriously: Saga + Tailwind<br>Quick Swift site: Ignite<br>Exploring Swift Web frameworks: Raptor<br></code></pre></td></tr></table></figure>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/04/21/build-website-in-swift/">Building a Personal Website in Swift - I Thought It Was Easy… Until It Wasn’t Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/avatar.png" alt="Yankai Wang" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Yankai Wang</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/shiinayane"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:ykwang224@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/huan-ying-misaki"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#the-web-already-has-a-native-runtime"><span class="toc-number">1.</span> <span class="toc-text">The Web Already Has a
+Native Runtime</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what-are-you-actually-declaring"><span class="toc-number">2.</span> <span class="toc-text">What Are You Actually
+Declaring?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-sweet-spot-and-the-cliff"><span class="toc-number">3.</span> <span class="toc-text">The Sweet Spot — and the
+Cliff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#saga-swift-purism-not-swiftui-purism"><span class="toc-number">4.</span> <span class="toc-text">Saga: Swift Purism, Not
+SwiftUI Purism</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tailwind-changes-the-experience"><span class="toc-number">5.</span> <span class="toc-text">Tailwind Changes the
+Experience</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#raptor-ambitious-but-friction-prone-for-complex-ui"><span class="toc-number">6.</span> <span class="toc-text">Raptor:
+Ambitious, but Friction-Prone for Complex UI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ignite-fast-but-opinionated"><span class="toc-number">7.</span> <span class="toc-text">Ignite: Fast, but Opinionated</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#astro-still-the-most-stable-choice"><span class="toc-number">8.</span> <span class="toc-text">Astro: Still the Most Stable
+Choice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-real-question"><span class="toc-number">9.</span> <span class="toc-text">The Real Question</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-perspective"><span class="toc-number">10.</span> <span class="toc-text">Final Perspective</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#swiftui-style-web-dsl-raptor-ignite"><span class="toc-number">10.1.</span> <span class="toc-text">SwiftUI-style Web DSL
+(Raptor &#x2F; Ignite)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#swift-native-generation-web-native-ui-saga"><span class="toc-number">10.2.</span> <span class="toc-text">Swift-native
+generation + Web-native UI (Saga)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-takeaway"><span class="toc-number">11.</span> <span class="toc-text">Final Takeaway</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tldr"><span class="toc-number">12.</span> <span class="toc-text">TL;DR</span></a></li></ol></div></div><footer><nobr><span class="icp-title">CC BY-NC-SA 4.0</span><span class="icp-content">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh</span></nobr><br><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main></body></html>
