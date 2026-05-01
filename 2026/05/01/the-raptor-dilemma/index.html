@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Raptor Dilemma | Yankai Wang</title><meta name="keywords" content="english,swiftui,swift,ssg,html,css"><meta name="description" content="SwiftUI Dreams vs Web Reality">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Raptor Dilemma">
+<meta property="og:url" content="https://www.shiinayane.com/2026/05/01/the-raptor-dilemma/index.html">
+<meta property="og:site_name" content="Yankai Wang">
+<meta property="og:description" content="SwiftUI Dreams vs Web Reality">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-05-01T06:26:03.000Z">
+<meta property="article:modified_time" content="2026-05-01T06:42:01.484Z">
+<meta property="article:author" content="Yankai Wang">
+<meta property="article:tag" content="english">
+<meta property="article:tag" content="swiftui">
+<meta property="article:tag" content="swift">
+<meta property="article:tag" content="ssg">
+<meta property="article:tag" content="html">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary"><link rel="canonical" href="https://www.shiinayane.com/2026/05/01/the-raptor-dilemma/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
+  font-family: Bender;
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
+}
+@font-face {
+  font-family: BenderLight;
+  src: local('BenderLight'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":-1,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+var page_config = {
+  code_fold: null
+};
+function updatePageConfig() {
+  var newPageConfig = document.querySelector('meta[name="page-config"]');
+  if (newPageConfig) {
+    page_config = JSON.parse(newPageConfig.content);
+  }
+}
+document.addEventListener('pjax:complete', function() { updatePageConfig(); });
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@11.12.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+ document.documentElement.setAttribute('theme-mode', 'light')
+if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
+ document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><style>:root {
+ --dark-background: url('/img/night_sheryl_nome.png');
+ --light-background: url('/img/day_ranka_lee.png');
+ --theme-encrypt-confirm: 'confirm'
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
+window.mermaid = mermaid;
+code.paintMermaid();
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+lightGallery(document.getElementById('post-bg'), {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+const postBg = document.querySelector('#post-bg');
+if (postBg) lightGallery(postBg, {
+  plugins: [lgZoom,lgThumbnail],
+  selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
+ cacheBust: false,
+ selectors: ['title','article','#aside-block','.pjax-js','data-pjax','.vercount','meta[name=page-config]'],
+ switches: {'article': Pjax.switches.sideBySide},
+ switchesOptions: {
+   'article': {
+     classNames: {
+       remove: "pjax-out",
+       add: "pjax-in"
+     }
+   }
+ }
+});
+document.addEventListener("pjax:complete", reset);document.addEventListener('pjax:success', _ => {
+ const script = document.createElement('script');
+ script.src = 'https://vercount.one/js';
+ document.head.appendChild(script);
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>The Raptor Dilemma</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-05-01T06:26:03.000Z" id="date"> 2026-05-01</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-05-01T06:42:01.484Z" id="updated"> 2026-05-01</time></div></span><br><span>Word Count: <div class="control">953</div></span><br><span>Read Time: <div class="control">5 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>Introduction</h2>
+<p>In my previous post, I explored a simple but fundamental
+question:</p>
+<blockquote>
+<p><strong>Where should Swift live in the Web stack?</strong></p>
+</blockquote>
+<p>After comparing tools like Astro, Saga, Toucan, Publish, Ignite, and
+Raptor, I came to a preliminary conclusion:</p>
+<blockquote>
+<p><strong>Swift is best suited for modeling content and generation
+logic,</strong></p>
+<p><strong>while HTML, CSS, and JavaScript remain the native layer of UI
+expression.</strong></p>
+</blockquote>
+<p>However, after actually building a site with Raptor — not just
+reading docs, but implementing a real theme — I ran into something more
+concrete.</p>
+<p>Not a bug. Not a limitation.</p>
+<p><strong>A dilemma.</strong></p>
+<h2 id="what-raptor-is-trying-to-do"><a href="#what-raptor-is-trying-to-do" class="headerlink" title="what-raptor-is-trying-to-do"></a>What Raptor Is Trying to Do</h2>
+<p>Raptor is not just a static site generator.</p>
+<p>It defines a Swift-first model of the Web:</p>
+<ul>
+<li>Pages</li>
+<li>Layouts</li>
+<li>Themes</li>
+<li>Styles</li>
+<li>Components</li>
+</ul>
+<p>Instead of writing:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;post-card&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>You write:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">VStack</span> &#123;<br>    <span class="hljs-type">Text</span>(post.title)<br>&#125;<br>.style(<span class="hljs-type">PostCardStyle</span>())<br></code></pre></td></tr></table></figure>
+<p>The promise is appealing:</p>
+<ul>
+<li>Type safety</li>
+<li>Composability</li>
+<li>A unified language (Swift)</li>
+<li>A SwiftUI-like developer experience</li>
+</ul>
+<p>In theory, this brings the same productivity gains SwiftUI brought to
+iOS.</p>
+<h2 id="the-sweet-spot"><a href="#the-sweet-spot" class="headerlink" title="the-sweet-spot"></a>The Sweet Spot</h2>
+<p>For simple pages, this works extremely well.</p>
+<p>You can write:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">Text</span>(<span class="hljs-string">&quot;Hello&quot;</span>)<br><span class="hljs-type">Button</span>(<span class="hljs-string">&quot;Read more&quot;</span>)<br></code></pre></td></tr></table></figure>
+<p>And quickly build:</p>
+<ul>
+<li>landing pages</li>
+<li>documentation sites</li>
+<li>simple blogs</li>
+</ul>
+<p>The abstraction feels clean, expressive, and productive.</p>
+<p>If your UI fits into:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">Text + Button + Grid + Card<br></code></pre></td></tr></table></figure>
+<p>Raptor feels great.</p>
+<h2 id="where-it-starts-to-break"><a href="#where-it-starts-to-break" class="headerlink" title="where-it-starts-to-break"></a>Where It Starts to Break</h2>
+<p>But real-world UI rarely stays simple.</p>
+<p>Especially if your goal is to build a <strong>custom visual
+theme</strong>.</p>
+<p>Let’s take a very common pattern from blog themes:</p>
+<h3 id="example-1-meta-row-layout"><a href="#example-1-meta-row-layout" class="headerlink" title="example-1-meta-row-layout"></a>Example 1: Meta row layout</h3>
+<p>In CSS:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.meta</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">justify-content</span>: space-between;<br>&#125;<br><span class="hljs-selector-class">.meta</span> <span class="hljs-selector-tag">time</span> &#123;<br>  <span class="hljs-attribute">float</span>: right;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>In Raptor, you end up rewriting the intent:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">HStack</span> &#123;<br>    categories<br>    <span class="hljs-type">Spacer</span>().axis(.horizontal)<br>    time<br>&#125;<br>.style(<span class="hljs-type">Property</span>.width(.percent(<span class="hljs-number">100</span>)))<br></code></pre></td></tr></table></figure>
+<p>This is fine — even cleaner.</p>
+<p>But now consider more complex cases.</p>
+<h3 id="example-2-pseudo-elements-after">Example 2: Pseudo-elements
+(::after)</h3>
+<p>In CSS:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.recent-info</span><span class="hljs-selector-pseudo">::after</span> &#123;<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">13%</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">5px</span>;<br>  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">var</span>(--accent);<br>  <span class="hljs-attribute">position</span>: relative;<br>  <span class="hljs-attribute">bottom</span>: -<span class="hljs-number">6px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>In Raptor:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">RecentInfoAccentBar</span>()<br></code></pre></td></tr></table></figure>
+<p>You replace a CSS pseudo-element with a real component.</p>
+<p>That’s not inherently bad — but it changes how you think:</p>
+<ul>
+<li>CSS: decorative layer</li>
+<li>Raptor: structural element</li>
+</ul>
+<p>You are no longer “styling”, you are rebuilding structure.</p>
+<h3 id="example-3-hover-interactions-across-elements">Example 3: Hover
+interactions across elements</h3>
+<p>In CSS:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.card</span><span class="hljs-selector-pseudo">:hover</span> <span class="hljs-selector-class">.read-more</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-built_in">var</span>(--bg-hover);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>In Raptor:</p>
+<p>There is no clean equivalent unless:</p>
+<ul>
+<li>you redesign the interaction</li>
+<li>or manually coordinate styles</li>
+</ul>
+<p>Because:</p>
+<blockquote>
+<p><strong>CSS selectors express relationships that Raptor’s component
+model does not.</strong></p>
+</blockquote>
+<h2 id="example-4-negative-margins-and-layout-hacks">Example 4: Negative
+margins and layout hacks</h2>
+<p>In CSS:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.read-more</span> &#123;<br>  <span class="hljs-attribute">margin-top</span>: -<span class="hljs-number">21px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>In Raptor:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift">.style(<span class="hljs-type">Property</span>.marginTop(.px(<span class="hljs-operator">-</span><span class="hljs-number">21</span>)))<br></code></pre></td></tr></table></figure>
+<p>At this point, you are not escaping CSS.</p>
+<p>You are <strong>translating it</strong>.</p>
+<h2 id="the-core-dilemma"><a href="#the-core-dilemma" class="headerlink" title="the-core-dilemma"></a>The Core Dilemma</h2>
+<p>This leads to the central issue:</p>
+<blockquote>
+<p><strong>Raptor tries to replace Web UI with Swift
+abstractions,</strong></p>
+<p><strong>but it still runs on a platform that only understands HTML,
+CSS, and JavaScript.</strong></p>
+</blockquote>
+<p>So developers end up in a strange position:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs plain">They think in Swift,<br>but debug in CSS.<br><br>They write components,<br>but fight layout at the DOM level.<br><br>They define styles,<br>but still rely on raw CSS properties.<br></code></pre></td></tr></table></figure>
+<p>The abstraction doesn’t remove complexity.</p>
+<p>It <strong>relocates it</strong>.</p>
+<h2 id="the-practical-reality"><a href="#the-practical-reality" class="headerlink" title="the-practical-reality"></a>The Practical Reality</h2>
+<p>In practice, building a real theme feels like this:</p>
+<h3 id="step-1-swift-abstraction"><a href="#step-1-swift-abstraction" class="headerlink" title="step-1-swift-abstraction"></a>Step 1: Swift abstraction</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-type">PostListItem</span> &#123;<br>    <span class="hljs-type">PostMeta</span>(<span class="hljs-operator">...</span>)<br>    <span class="hljs-type">PostTitle</span>(<span class="hljs-operator">...</span>)<br>    <span class="hljs-type">PostExcerpt</span>(<span class="hljs-operator">...</span>)<br>    <span class="hljs-type">PostReadMore</span>(<span class="hljs-operator">...</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="step-2-style-layer"><a href="#step-2-style-layer" class="headerlink" title="step-2-style-layer"></a>Step 2: Style layer</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs swift">.style(<span class="hljs-type">PostCardStyle</span>())<br></code></pre></td></tr></table></figure>
+<h3 id="step-3-eventually"><a href="#step-3-eventually" class="headerlink" title="step-3-eventually"></a>Step 3: Eventually…</h3>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs swift">.style(<span class="hljs-type">Property</span>.marginTop(.px(<span class="hljs-number">12</span>)))<br>.style(<span class="hljs-type">Property</span>.paddingLeft(.px(<span class="hljs-number">8</span>)))<br>.style(<span class="hljs-type">Property</span>.fontSize(.px(<span class="hljs-number">14</span>)))<br></code></pre></td></tr></table></figure>
+<p>At this point:</p>
+<p>You are writing CSS again — just in Swift syntax.</p>
+<h2 id="the-fragmentation-problem"><a href="#the-fragmentation-problem" class="headerlink" title="the-fragmentation-problem"></a>The Fragmentation Problem</h2>
+<p>You end up with a split mental model:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Structure → Swift<br>Styling → CSS concepts<br>Layout debugging → Browser DevTools<br></code></pre></td></tr></table></figure>
+<p>This creates a workflow that feels:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">Half SwiftUI<br>Half traditional Web<br></code></pre></td></tr></table></figure>
+<p>Not fully one or the other.</p>
+<h2 id="comparison-saga"><a href="#comparison-saga" class="headerlink" title="comparison-saga"></a>Comparison: Saga</h2>
+<p>This is where Raptor differs sharply from Saga.</p>
+<p>Saga does not try to replace Web UI.</p>
+<p>It embraces it.</p>
+<p>Example:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs swift">article(class: <span class="hljs-string">&quot;mx-auto max-w-3xl px-6 py-12&quot;</span>) &#123;<br>  h1(class: <span class="hljs-string">&quot;text-4xl font-bold tracking-tight&quot;</span>) &#123;<br>    item.title<br>  &#125;<br>  div(class: <span class="hljs-string">&quot;prose&quot;</span>) &#123;<br>    raw(item.body)<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>Here:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Swift → structure + composition<br>HTML → structure<br>CSS → styling<br></code></pre></td></tr></table></figure>
+<p>No translation layer.</p>
+<p>No abstraction mismatch.</p>
+<h2 id="why-this-matters"><a href="#why-this-matters" class="headerlink" title="why-this-matters"></a>Why This Matters</h2>
+<p>The problem is not whether Swift can express UI.</p>
+<p>It can.</p>
+<p>The problem is:</p>
+<blockquote>
+<p><strong>Should it?</strong></p>
+</blockquote>
+<p>For simple UI:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">Abstraction helps<br></code></pre></td></tr></table></figure>
+<p>For complex UI:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">Abstraction fights the platform<br></code></pre></td></tr></table></figure>
+<h2 id="a-key-insight"><a href="#a-key-insight" class="headerlink" title="a-key-insight"></a>A Key Insight</h2>
+<p>After building a real site, the conclusion becomes clearer:</p>
+<blockquote>
+<p><strong>Raptor’s abstraction is strongest where UI is
+generic,</strong></p>
+<p><strong>and weakest where UI is highly customized.</strong></p>
+</blockquote>
+<p>Which is exactly where you need control the most.</p>
+<h2 id="a-more-general-perspective"><a href="#a-more-general-perspective" class="headerlink" title="a-more-general-perspective"></a>A More General Perspective</h2>
+<p>This is not just about Raptor.</p>
+<p>It’s about <strong>layers</strong>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">Rendering layer → HTML / CSS / JS<br>Authoring layer → Swift / React / Astro<br></code></pre></td></tr></table></figure>
+<p>React and Astro work well because they remain close to the rendering
+layer.</p>
+<p>Raptor moves further away.</p>
+<p>That distance is both its strength and its weakness.</p>
+<h2 id="conclusion"><a href="#conclusion" class="headerlink" title="conclusion"></a>Conclusion</h2>
+<p>Raptor is an ambitious attempt to bring SwiftUI-style thinking to the
+Web.</p>
+<p>But the Web already has its own native UI system.</p>
+<p>The dilemma is not about capability.</p>
+<p>It’s about boundaries.</p>
+<blockquote>
+<p><strong>When Swift tries to replace Web UI,</strong></p>
+<p><strong>the abstraction cost grows quickly.</strong></p>
+<p><strong>When Swift complements Web UI,</strong></p>
+<p><strong>its strengths actually shine.</strong></p>
+</blockquote>
+<p>In the end:</p>
+<blockquote>
+<p><strong>The Web tends to win.</strong></p>
+</blockquote>
+<h2 id="final-takeaway"><a href="#final-takeaway" class="headerlink" title="final-takeaway"></a>Final Takeaway</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">Swift for logic → great<br>Swift for UI abstraction → situational<br>HTML/CSS/JS → still the source of truth<br></code></pre></td></tr></table></figure>
+<h2 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a>TL;DR</h2>
+<ul>
+<li>Raptor shines for simple, structured UI</li>
+<li>It struggles with complex, highly customized layouts</li>
+<li>CSS concepts inevitably leak through</li>
+<li>Saga-style approaches feel more stable for visual-heavy sites</li>
+<li>The real question is not “Can Swift build UI?” but:</li>
+</ul>
+<blockquote>
+<p><strong>“Where should Swift stop?”</strong></p>
+</blockquote>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages" style="justify-content: flex-end"><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/05/01/swift-for-static-sites/">Swift for Static Sites Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/avatar.png" alt="Yankai Wang" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Yankai Wang</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/shiinayane"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:ykwang224@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/huan-ying-misaki"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#introduction"><span class="toc-number">1.</span> <span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what-raptor-is-trying-to-do"><span class="toc-number">2.</span> <span class="toc-text">What Raptor Is Trying to Do</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-sweet-spot"><span class="toc-number">3.</span> <span class="toc-text">The Sweet Spot</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#where-it-starts-to-break"><span class="toc-number">4.</span> <span class="toc-text">Where It Starts to Break</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#example-1-meta-row-layout"><span class="toc-number">4.1.</span> <span class="toc-text">Example 1: Meta row layout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-2-pseudo-elements-after"><span class="toc-number">4.2.</span> <span class="toc-text">Example 2: Pseudo-elements
+(::after)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#example-3-hover-interactions-across-elements"><span class="toc-number">4.3.</span> <span class="toc-text">Example 3: Hover
+interactions across elements</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#example-4-negative-margins-and-layout-hacks"><span class="toc-number">5.</span> <span class="toc-text">Example 4: Negative
+margins and layout hacks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-core-dilemma"><span class="toc-number">6.</span> <span class="toc-text">The Core Dilemma</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-practical-reality"><span class="toc-number">7.</span> <span class="toc-text">The Practical Reality</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#step-1-swift-abstraction"><span class="toc-number">7.1.</span> <span class="toc-text">Step 1: Swift abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step-2-style-layer"><span class="toc-number">7.2.</span> <span class="toc-text">Step 2: Style layer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step-3-eventually"><span class="toc-number">7.3.</span> <span class="toc-text">Step 3: Eventually…</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-fragmentation-problem"><span class="toc-number">8.</span> <span class="toc-text">The Fragmentation Problem</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#comparison-saga"><span class="toc-number">9.</span> <span class="toc-text">Comparison: Saga</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#why-this-matters"><span class="toc-number">10.</span> <span class="toc-text">Why This Matters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a-key-insight"><span class="toc-number">11.</span> <span class="toc-text">A Key Insight</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#a-more-general-perspective"><span class="toc-number">12.</span> <span class="toc-text">A More General Perspective</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#conclusion"><span class="toc-number">13.</span> <span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#final-takeaway"><span class="toc-number">14.</span> <span class="toc-text">Final Takeaway</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tldr"><span class="toc-number">15.</span> <span class="toc-text">TL;DR</span></a></li></ol></div></div><footer><nobr><span class="icp-title">CC BY-NC-SA 4.0</span><span class="icp-content">https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh</span></nobr><br><nobr>Published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></nobr><wbr><nobr> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknights</a></nobr><wbr><nobr> by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></nobr></footer></aside></main></body></html>
