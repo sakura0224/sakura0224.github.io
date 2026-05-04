@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Swift for Static Sites | Yankai Wang</title><meta name="keywords" content="english,swiftui,swift,ssg,html,css"><meta name="description" content="SwiftUI Purism vs Web-Native Reality">
+<!DOCTYPE html><html lang="en-us" theme-mode="auto"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Swift for Static Sites | Yankai Wang</title><meta name="keywords" content="english,swift,swiftui,ssg,html,css"><meta name="description" content="SwiftUI Purism vs Web-Native Reality">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift for Static Sites">
-<meta property="og:url" content="https://shiinayane.github.io/project/2026/05/01/swift-for-static-sites/index.html">
+<meta property="og:url" content="https://shiinayane.github.io/2026/05/01/swift-for-static-sites/index.html">
 <meta property="og:site_name" content="Yankai Wang">
 <meta property="og:description" content="SwiftUI Purism vs Web-Native Reality">
 <meta property="og:locale" content="en_US">
@@ -9,24 +9,24 @@
 <meta property="article:modified_time" content="2026-05-01T06:42:34.177Z">
 <meta property="article:author" content="Yankai Wang">
 <meta property="article:tag" content="english">
-<meta property="article:tag" content="swiftui">
 <meta property="article:tag" content="swift">
+<meta property="article:tag" content="swiftui">
 <meta property="article:tag" content="ssg">
 <meta property="article:tag" content="html">
 <meta property="article:tag" content="css">
-<meta name="twitter:card" content="summary"><link rel="canonical" href="https://shiinayane.github.io/project/2026/05/01/swift-for-static-sites/"><link rel="icon" type="image/x-icon" href="/project/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/project/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/project/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/project/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/project/css/arknights.css"><style>@font-face {
+<meta name="twitter:card" content="summary"><link rel="canonical" href="https://shiinayane.github.io/2026/05/01/swift-for-static-sites/"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="preload" as="font" crossorigin="anonymous" href="/font/Bender.ttf"><link rel="preload" as="font" crossorigin="anonymous" href="/font/BenderLight.woff2"><link rel="preload" as="font" crossorigin="anonymous" href="/font/JetBrainsMono-Regular.woff2"><link rel="stylesheet" href="/css/arknights.css"><style>@font-face {
   font-family: Bender;
-  src: local('Bender'), url("/project/font/Bender.ttf"), url("/project/font/Bender.otf");
+  src: local('Bender'), url("/font/Bender.ttf"), url("/font/Bender.otf");
 }
 @font-face {
   font-family: BenderLight;
-  src: local('BenderLight'), url("/project/font/BenderLight.woff2") format('woff2');
+  src: local('BenderLight'), url("/font/BenderLight.woff2") format('woff2');
 }
 @font-face {
   font-family: 'JetBrains Mono';
-  src: local('JetBrains Mono'), url('/project/font/JetBrainsMono-Regular.woff2') format('woff2');
+  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
 }
-</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/project/","code_fold":-1,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
+</style><meta name="page-config" content="{&quot;code_fold&quot;:null}"><script class="pjax-js">var config = {"root":"/","code_fold":-1,"search":{"preload":false,"activeHolder":"Enter here","blurHolder":"Search","noResult":"Data \"$0\" not found"},"code":{"codeInfo":"$0 - $1 lines","copy":"copy"}};
 var page_config = {
   code_fold: null
 };
@@ -37,24 +37,24 @@ function updatePageConfig() {
   }
 }
 document.addEventListener('pjax:complete', function() { updatePageConfig(); });
-updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/project/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@11.12.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/project/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
+updatePageConfig();</script><link type="text/css" rel="stylesheet" href="/lib/encrypt/hbe.style.css"><script src="//unpkg.com/mermaid@11.12.2/dist/mermaid.min.js"></script><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lightgallery.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-zoom.css"><link type="text/css" rel="stylesheet" href="//unpkg.com/lightgallery@2.7.1/css/lg-thumbnail.css"><link type="text/css" rel="stylesheet" href="/lib/fontawesome/css/all.min.css"><script>if (window.localStorage.getItem('theme-mode') === 'light' || window.matchMedia('(prefers-color-scheme:light)').matches)
  document.documentElement.setAttribute('theme-mode', 'light')
 if (window.localStorage.getItem('theme-mode') === 'dark' || window.matchMedia('(prefers-color-scheme:dark)').matches)
  document.documentElement.setAttribute('theme-mode', 'dark')</script><style>@font-face {
  font-family: BenderLight;
- src: local('Bender'), url("/project/font/BenderLight.woff2") format('woff2');
+ src: local('Bender'), url("/font/BenderLight.woff2") format('woff2');
 }
 @font-face {
  font-family: 'JetBrains Mono';
- src: local('JetBrains Mono'), url('/project/font/JetBrainsMono-Regular.woff2') format('woff2');
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
 }</style><style>:root {
- --dark-background: url('/project/img/night_sheryl_nome.png');
- --light-background: url('/project/img/day_ranka_lee.png');
+ --dark-background: url('/img/night_sheryl_nome.png');
+ --light-background: url('/img/day_ranka_lee.png');
  --theme-encrypt-confirm: 'confirm'
-}</style><script defer src="/project/js/arknights.js"></script><script defer src="/project/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
+}</style><script defer src="/js/arknights.js"></script><script defer src="/js/search.js"></script><script defer src="https://vercount.one/js"></script><script defer type="module">import mermaid from '//unpkg.com/mermaid@11.12.2/dist/mermaid.esm.min.mjs';
 window.mermaid = mermaid;
 code.paintMermaid();
-</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/project/lib/encrypt/hbe.js"></script><script async src="/project/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
+</script><script async src="//unpkg.com/lightgallery@2.7.1/lightgallery.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script><script async src="//unpkg.com/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script><script async src="/lib/encrypt/hbe.js"></script><script async src="/js/pjax.js"></script><script class="pjax-js">reset= () => {document.querySelector('.lg-container')?.remove()
 lightGallery(document.getElementById('post-bg'), {
   plugins: [lgZoom,lgThumbnail],
   selector: '.item-img'})}</script><script>window.addEventListener("load",() => {pjax = new Pjax({
@@ -95,7 +95,7 @@ document.addEventListener("pjax:complete", reset);document.addEventListener('pja
  const script = document.createElement('script');
  script.src = 'https://vercount.one/js';
  document.head.appendChild(script);
-});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/project/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/project/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/project/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/project/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Swift for Static Sites</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-05-01T02:01:54.000Z" id="date"> 2026-05-01</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-05-01T06:42:34.177Z" id="updated"> 2026-05-01</time></div></span><br><span>Word Count: <div class="control">1.1k</div></span><br><span>Read Time: <div class="control">7 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><p>Recently I went through a number of static site generators in the
+});reset()})</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="loading" style="opacity: 0;"><div class="loadingBar left"></div><div class="loadingBar right"></div></div><main><header class="closed"><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><nav><div class="navItem" id="search-header"><span class="navItemTitle"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Search" spellcheck="false" maxlength="50" type="text" id="search-input"></span></div><div class="navItem" id="search-holder"></div><div class="search-popup" tabindex="0"><div id="search-result"></div></div><ol class="navContent"><li class="navItem"><a class="navBlock" href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem" matchdata="categories,tags"><a class="navBlock" href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a class="navBlock" href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a class="navBlock" href="/contact/"><span class="navItemTitle">Contact</span></a></li></ol></nav></header><article><div id="post-bg"><div id="post-title"><h1>Swift for Static Sites</h1><div id="post-info"><span>First Post: <div class="control"><time datetime="2026-05-01T02:01:54.000Z" id="date"> 2026-05-01</time></div></span><br><span>Last Update: <div class="control"><time datetime="2026-05-01T06:42:34.177Z" id="updated"> 2026-05-01</time></div></span><br><span>Word Count: <div class="control">1.1k</div></span><br><span>Read Time: <div class="control">7 min</div></span><br><span id="vercount_container_page_pv">Page View: <span class="control" id="vercount_value_page_pv">loading...</span></span></div></div><hr><div id="post-content"><p>Recently I went through a number of static site generators in the
 Swift ecosystem — <a
 target="_blank" rel="noopener" href="https://github.com/loopwerk/Saga"><i class="fa-brands fa-github"></i>loopwerk/Saga</a>,
 <a
@@ -333,7 +333,7 @@ quickly.</p>
 safety, composition, and tooling — shine.</p>
 <h2 id="tldr"><a href="#tldr" class="headerlink" title="tldr"></a>TL;DR</h2>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">Not using Swift: Astro + Tailwind<br>Using Swift seriously: Saga + Tailwind<br>Quick Swift site: Ignite<br>Exploring Swift Web frameworks: Raptor<br></code></pre></td></tr></table></figure>
-<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/project/2026/05/01/the-raptor-dilemma/">← Next The Raptor Dilemma</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/project/2026/04/21/build-website-in-swift/">Building a Personal Website in Swift Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/project/" id="logo"><img src="/img/avatar.png" alt="Yankai Wang" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Yankai Wang</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/shiinayane"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:ykwang224@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/huan-ying-misaki"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#the-web-already-has-a-native-runtime"><span class="toc-number">1.</span> <span class="toc-text">The Web Already Has a
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div class="footer-link" style="width: 50%;text-align:right;border-right:1px #fe2 solid"><a href="/2026/05/01/the-raptor-dilemma/">← Next The Raptor Dilemma</a></div><div class="footer-link" style="width: 50%;right:1px;border-left:1px #fe2 solid"><a href="/2026/04/21/build-website-in-swift/">Building a Personal Website in Swift Prev →</a></div></div></div></div><div class="bottom-btn"><div><a class="i-top" id="to-top" onClick="scrolls.scrolltop();" title="To Top" style="opacity: 0; display: none;">∧ </a><a class="i-index" id="to-index" onClick="tocControl.change()" title="To Catalog"><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span><span class="tocBtnIconBar"></span></a><a class="i-color" id="color-mode" onClick="colorMode.change()" title="Change Theme"></a></div></div></article><aside><div id="about"><a href="/" id="logo"><img src="/img/avatar.png" alt="Yankai Wang" style="margin:0;border-radius:0;"></a><h1 id="Dr"><a href="/">Yankai Wang</a></h1><div id="description"><p></p></div><div id="social-links"><a class="social" target="_blank" rel="noopener" href="https://github.com/shiinayane"><i class="fab fa-github" alt="GitHub"></i></a><a class="social" href="mailto:ykwang224@gmail.com"><i class="fa fa-envelope" alt="E-Mail"></i></a><a class="social" target="_blank" rel="noopener" href="https://www.zhihu.com/people/huan-ying-misaki"><i class="fab fa-zhihu" alt="Zhihu"></i></a></div></div><div id="aside-block"><div id="toc-div"><h1>Catalog</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#the-web-already-has-a-native-runtime"><span class="toc-number">1.</span> <span class="toc-text">The Web Already Has a
 Native Runtime</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#what-are-you-actually-declaring"><span class="toc-number">2.</span> <span class="toc-text">What Are You Actually
 Declaring?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-sweet-spot-and-the-cliff"><span class="toc-number">3.</span> <span class="toc-text">The Sweet Spot — and the
 Cliff</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#saga-swift-purism-not-swiftui-purism"><span class="toc-number">4.</span> <span class="toc-text">Saga: Swift Purism, Not
